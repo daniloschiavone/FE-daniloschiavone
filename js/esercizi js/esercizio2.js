@@ -70,3 +70,12 @@ let haPermesso = true;
 let puòEntrare = (eta >= 18) || haPermesso;
 console.log("Può entrare:", puòEntrare);
 
+// ES 2.8 Scrivi un programma che, date le variabili nome, cognome e eta, stampi una frase di presentazione usando un template literal.
+
+console.log("ESERCIZIO 2.8");
+
+let nome2 = "Danilo";
+let cognome = "Schiavone";
+let eta2 = 32;
+let presentazione = `Ciao, mi chiamo ${nome2} ${cognome} e ho ${eta2} anni.`;
+console.log(presentazione); 
