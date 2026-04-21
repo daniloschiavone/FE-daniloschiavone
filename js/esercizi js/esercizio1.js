@@ -125,3 +125,8 @@ console.log("20 / 5 =", 20 / 5);
 // Sezione 3: Stampa un messaggio di chiusura
 console.log("Grazie per aver seguito questo esercizio!");
 
+// esercizio 1.12 Scrivi un programma che stampi il risultato di 0.1 + 0.2. Il risultato è quello che ti aspetti? Aggiungi un commento nel codice con la tua osservazione.
+
+console.log("esercizio 1.12");
+
+console.log(0.1 + 0.2); // Il risultato è 0.30000000000000004, non esattamente 0.3 a causa di come i numeri in virgola mobile sono rappresentati in JavaScript (e in generale nei computer).       
