@@ -18,3 +18,10 @@ console.log("Moltiplicazione:", a * b);
 console.log("Divisione:", a / b);
 console.log("Modulo:", a % b);
 
+// ES 2.3 Dato un prezzo di 49.90 e uno sconto del 20%, calcola e stampa il prezzo scontato.
+console.log("ESERCIZIO 2.3");
+
+let prezzo = 49.90;
+let sconto = 0.20;
+let prezzoScontato = prezzo - (prezzo * sconto);
+console.log("Prezzo scontato:", prezzoScontato);
