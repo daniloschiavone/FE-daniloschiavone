@@ -25,3 +25,20 @@ let prezzo = 49.90;
 let sconto = 0.20;
 let prezzoScontato = prezzo - (prezzo * sconto);
 console.log("Prezzo scontato:", prezzoScontato);
+
+// ES 2.4 Dichiara variabili di tipi diversi (number, string, boolean, undefined, null) e usa typeof per stampare il tipo di ciascuna.
+
+console.log("ESERCIZIO 2.4");
+
+let numero = 42;
+let testo = "Ciao";
+let booleano = true;
+let indefinito;
+let nullo = null;
+
+console.log("Tipo di numero:", typeof numero);
+console.log("Tipo di testo:", typeof testo);
+console.log("Tipo di booleano:", typeof booleano);
+console.log("Tipo di indefinito:", typeof indefinito);
+console.log("Tipo di nullo:", typeof nullo);    
+
