@@ -79,3 +79,14 @@ let cognome = "Schiavone";
 let eta2 = 32;
 let presentazione = `Ciao, mi chiamo ${nome2} ${cognome} e ho ${eta2} anni.`;
 console.log(presentazione); 
+
+// ES 2.9  Dato un numero di secondi totali (es. 3661), scrivi un programma che calcoli e stampi il corrispondente in ore, minuti e secondi rimanenti.
+
+console.log("ESERCIZIO 2.9");
+
+let secondiTotali = 3661;
+let ore = Math.floor(secondiTotali / 3600);
+let minuti = Math.floor((secondiTotali % 3600) / 60);
+let secondiRimanenti = secondiTotali % 60;
+
+console.log(`${ore} ore, ${minuti} minuti, ${secondiRimanenti} secondi`);  
