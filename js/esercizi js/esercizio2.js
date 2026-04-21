@@ -90,3 +90,18 @@ let minuti = Math.floor((secondiTotali % 3600) / 60);
 let secondiRimanenti = secondiTotali % 60;
 
 console.log(`${ore} ore, ${minuti} minuti, ${secondiRimanenti} secondi`);  
+
+// ES 2.10 Scrivi un programma che scambi il valore di due variabili a e b senza usare una terza variabile. Stampa i valori prima e dopo lo scambio.
+
+console.log("ESERCIZIO 2.10");
+
+let a2 = 5;
+let b2 = 10;
+
+console.log("Prima dello scambio: a =", a2, "b =", b2);
+
+a2 = a2 + b2; // a2 ora è 15
+b2 = a2 - b2; // b2 ora è 5
+a2 = a2 - b2; // a2 ora è 10
+
+console.log("Dopo lo scambio: a =", a2, "b =", b2); 
