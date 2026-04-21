@@ -42,3 +42,11 @@ console.log("Tipo di booleano:", typeof booleano);
 console.log("Tipo di indefinito:", typeof indefinito);
 console.log("Tipo di nullo:", typeof nullo);    
 
+// ES 2.5 Scrivi un programma che converta la stringa "123" in un numero, gli aggiunga 7 e stampi il risultato.
+
+console.log("ESERCIZIO 2.5");
+
+let stringaNumero = "123";
+let numeroConvertito = parseInt(stringaNumero);
+let risultato = numeroConvertito + 7;
+console.log("Risultato:", risultato);   
