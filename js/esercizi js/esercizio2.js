@@ -105,3 +105,12 @@ b2 = a2 - b2; // b2 ora è 5
 a2 = a2 - b2; // a2 ora è 10
 
 console.log("Dopo lo scambio: a =", a2, "b =", b2); 
+
+// ES 2.11 Dato un numero intero, scrivi un programma che determini se è pari o dispari usando l'operatore modulo e stampi il risultato come booleano.
+
+console.log("ESERCIZIO 2.11");
+
+let numeroIntero = 7;
+let èPari = (numeroIntero % 2 === 0);
+console.log("Il numero è pari?", èPari);
+
