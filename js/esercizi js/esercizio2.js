@@ -50,3 +50,16 @@ let stringaNumero = "123";
 let numeroConvertito = parseInt(stringaNumero);
 let risultato = numeroConvertito + 7;
 console.log("Risultato:", risultato);   
+
+// ES 2.6 Senza eseguire il codice, prevedi il risultato di ciascuna espressione. Poi verificalo:
+
+console.log("ESERCIZIO 2.6");
+
+console.log("5" + 3); // "53"
+console.log("5" - 3); // 2
+console.log("5" * "2"); // 10
+console.log(true + 1); // 2
+console.log(false + "ciao"); // "falseciao"
+
+// ES 2.7 Dichiara le variabili eta (con valore 17), haPermesso (con valore true). Scrivi un'espressione che restituisca true solo se la persona ha almeno 18 anni oppure ha un permesso. Stampa il risultato.
+
