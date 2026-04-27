@@ -390,4 +390,24 @@ function coppiaVicinaZero(arr) {
 let arrayPerCoppia = [-1, 2, -3, 4, 5];
 console.log("La coppia di elementi la cui somma è più vicina a zero è:", coppiaVicinaZero(arrayPerCoppia));
 
+//Scrivi una funzione che accetti un array e un numero N, e restituisca gli N elementi più frequenti.
+
+console.log("ESERCIZIO 5.22");
+
+function elementiPiuFrequenti(arr, n) {
+    let frequenza = {};
+    for (let i = 0; i < arr.length; i++) {
+        if (frequenza[arr[i]]) {
+            frequenza[arr[i]]++;
+        } else {
+            frequenza[arr[i]] = 1;
+        }
+    }   
+    let elementiOrdinati = Object.keys(frequenza).sort((a, b) => frequenza[b] - frequenza[a]);
+    return elementiOrdinati.slice(0, n).map(Number); // Restituisce i primi N elementi convertiti in numero
+}
+
+let arrayPerFrequenza = [1, 2, 3, 2, 4, 3, 5, 2];
+console.log("I 2 elementi più frequenti sono:", elementiPiuFrequenti(arrayPerFrequenza, 2));    
+
 //
