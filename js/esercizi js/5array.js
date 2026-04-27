@@ -35,4 +35,35 @@ function maxArray(arr) {
 
 console.log("Il valore massimo dell'array è:", maxArray(numeri));
 
+//Dato un array di numeri, scrivi una funzione che restituisca un nuovo array contenente solo i numeri pari.
+console.log("ESERCIZIO 5.4");
+
+function filtraPari(arr) {
+    let pari = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 === 0) {
+            pari.push(arr[i]);
+        }
+    }
+    return pari;
+}
+
+console.log("I numeri pari dell'array sono:", filtraPari(numeri));
+
+//Scrivi una funzione che accetti un array e un valore, e restituisca quante volte quel valore appare nell'array.
+console.log("ESERCIZIO 5.5");
+
+function contaValore(arr, valore) {
+    let count = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === valore) {
+            count++;
+        }
+    }
+    return count;
+}
+
+let valori = [1, 2, 3, 2, 4, 2, 5];
+console.log("Il valore 2 appare", contaValore(valori, 2), "volte nell'array.");
+
 //
