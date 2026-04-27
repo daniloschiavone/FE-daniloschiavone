@@ -280,3 +280,38 @@ function dividiInSottoArray(arr, n) {
 
 let arrayDaDividere = [1, 2, 3, 4, 5];
 console.log("Array diviso in sotto-array di dimensione 2:", dividiInSottoArray(arrayDaDividere, 2));
+
+//Scrivi una funzione che accetti due array ordinati di numeri e restituisca un unico array ordinato (merge di due array ordinati).
+
+console.log("ESERCIZIO 5.18");
+
+function mergeArray(arr1, arr2) {
+    let merged = [];
+    let i = 0;
+    let j = 0;
+
+    while (i < arr1.length && j < arr2.length) {
+        if (arr1[i] < arr2[j]) {
+            merged.push(arr1[i]);
+            i++;
+        } else {
+            merged.push(arr2[j]);
+            j++;
+        }
+    } 
+    // Aggiungi gli elementi rimanenti di arr1 o arr2
+    while (i < arr1.length) {
+        merged.push(arr1[i]);
+        i++;
+    }
+    while (j < arr2.length) {
+        merged.push(arr2[j]);
+        j++;
+    }
+
+    return merged;
+}
+
+let arrayOrdinato1 = [1, 3, 5];
+let arrayOrdinato2 = [2, 4, 6];
+console.log("Array unito e ordinato:", mergeArray(arrayOrdinato1, arrayOrdinato2));
