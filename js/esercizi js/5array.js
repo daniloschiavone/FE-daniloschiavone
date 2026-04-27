@@ -491,3 +491,21 @@ function sommaMassimaSottoSequenza(arr) {
 
 let arrayPerSottoSequenza = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
 console.log("La somma più grande di una sotto-sequenza contigua è:", sommaMassimaSottoSequenza(arrayPerSottoSequenza));
+
+//Scrivi una funzione che accetti un array di numeri e restituisca true se l'array è ordinato in modo crescente, false altrimenti.
+console.log("ESERCIZIO 5.27");
+
+function isSortedAscending(arr) {
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] < arr[i - 1]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+let arrayOrdinato = [1, 2, 3, 4, 5];
+let arrayNonOrdinato = [1, 3, 2, 4, 5];
+console.log("L'array è ordinato in modo crescente:", isSortedAscending(arrayOrdinato));
+console.log("L'array è ordinato in modo crescente:", isSortedAscending(arrayNonOrdinato));
+
