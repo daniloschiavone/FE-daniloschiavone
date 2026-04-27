@@ -97,4 +97,22 @@ function rimuoviDuplicati(arr) {
 let arrayConDuplicati = [1, 2, 3, 2, 4, 3, 5];
 console.log("Array senza duplicati:", rimuoviDuplicati(arrayConDuplicati));
 
+//Scrivi una funzione che accetti due array e restituisca un array con gli elementi comuni (intersezione).
+
+console.log("ESERCIZIO 5.8");
+
+function intersezioneArray(arr1, arr2) {
+    let intersezione = [];
+    for (let i = 0; i < arr1.length; i++) {
+        if (arr2.includes(arr1[i]) && !intersezione.includes(arr1[i])) {
+            intersezione.push(arr1[i]);
+        }
+    }
+    return intersezione;
+}
+
+let array1 = [1, 2, 3, 4];
+let array2 = [3, 4, 5, 6];
+console.log("Elementi comuni tra i due array:", intersezioneArray(array1, array2));
+
 //
