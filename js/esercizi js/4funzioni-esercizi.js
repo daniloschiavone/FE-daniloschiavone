@@ -87,3 +87,32 @@ const potenza = (base, esponente = 2) => {
 }
 console.log("5 alla seconda potenza è:", potenza(5, 2));
 console.log("3 alla terza potenza è:", potenza(3, 3));  
+
+//Scrivi una arrow function invertiStringa che accetti una stringa e restituisca la stringa invertita (non usare metodi degli array: usa un ciclo).
+console.log("ESERCIZIO 4.10");
+
+const invertiStringa = (str) => {
+    let inverted = '';
+    for (let i = str.length - 1; i >= 0; i--) {
+        inverted += str[i];
+    }
+    return inverted;
+}
+console.log("La stringa 'JavaScript' invertita è:", invertiStringa("JavaScript")); 
+
+//Scrivi una arrow function applicaDue che accetti un valore e due funzioni, e restituisca il risultato dell'applicazione della seconda funzione al risultato della prima.
+// Esempio di utilizzo:
+// applicaDue(5, raddoppia, aggiungiUno) dovrebbe restituire 11 (5*2 = 10, 10+1 = 11)
+
+console.log("ESERCIZIO 4.11");
+
+const applicaDue = (valore, func1, func2) => {
+    return func2(func1(valore));
+}
+
+const raddoppia = (x) => x * 2;
+const aggiungiUno = (x) => x + 1;
+
+console.log("Applicazione di raddoppia e aggiungiUno a 5:", applicaDue(5, raddoppia, aggiungiUno));
+
+//
