@@ -315,3 +315,30 @@ function mergeArray(arr1, arr2) {
 let arrayOrdinato1 = [1, 3, 5];
 let arrayOrdinato2 = [2, 4, 6];
 console.log("Array unito e ordinato:", mergeArray(arrayOrdinato1, arrayOrdinato2));
+
+//Scrivi una funzione che accetti un array e restituisca un array con tutti gli elementi che appaiono più di una volta.
+console.log("ESERCIZIO 5.19");
+
+function elementiDuplicati(arr) {
+    let duplicati = [];
+    let contatore = {};
+
+    for (let i = 0; i < arr.length; i++) {
+        if (contatore[arr[i]]) {
+            contatore[arr[i]]++;
+        } else {
+            contatore[arr[i]] = 1;
+        }
+    }
+    
+    for (let key in contatore) {
+        if (contatore[key] > 1) {
+            duplicati.push(Number(key)); // Converti la chiave in numero
+        }
+    }
+
+    return duplicati;
+}
+
+let arrayConDuplicati2 = [1, 2, 3, 2, 4, 3, 5];
+console.log("Elementi che appaiono più di una volta:", elementiDuplicati(arrayConDuplicati2));
