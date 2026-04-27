@@ -208,3 +208,21 @@ console.log("L'array è un palindromo?", èPalindromo(arrayPalindromo));
 let arrayNonPalindromo = [1, 2, 3, 4, 5];
 console.log("L'array è un palindromo?", èPalindromo(arrayNonPalindromo));   
 
+//Scrivi una funzione che, dato un array di numeri, restituisca un array dove ogni elemento
+//è la somma cumulativa fino a quel punto. Ad esempio, [1, 2, 3, 4] diventa [1, 3, 6, 10].
+
+console.log("ESERCIZIO 5.14");
+
+function sommaCumulativa(arr) {
+    let cumulativa = [];
+    let somma = 0;
+    for (let i = 0; i < arr.length; i++) {
+        somma += arr[i];
+        cumulativa.push(somma);
+    }
+    return cumulativa;
+}
+
+let arrayDaCumulare = [1, 2, 3, 4];
+console.log("Array con somma cumulativa:", sommaCumulativa(arrayDaCumulare));
+
