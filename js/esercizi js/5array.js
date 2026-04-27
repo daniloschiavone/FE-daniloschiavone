@@ -20,4 +20,19 @@ function sommaArray(arr) {
 let numeri = [1, 2, 3, 4, 5];
 console.log("La somma dell'array è:", sommaArray(numeri));
 
+//Dato un array di numeri, scrivi una funzione che restituisca il valore massimo.
+console.log("ESERCIZIO 5.3");
+
+function maxArray(arr) {
+    let max = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    return max;
+}
+
+console.log("Il valore massimo dell'array è:", maxArray(numeri));
+
 //
