@@ -237,4 +237,15 @@ console.log("30°C in Fahrenheit è:", convertiTemperatura(30, "C", "F"));
 console.log("86°F in Celsius è:", convertiTemperatura(86, "F", "C"));
 console.log("300K in Celsius è:", convertiTemperatura(300, "K", "C"));  
 
-//
+//Scrivi una arrow function convalidaEmail che accetti una stringa e restituisca true se sembra un indirizzo email valido 
+//(contiene @, ha almeno un carattere prima e dopo @, ha un punto dopo @).
+console.log("ESERCIZIO 4.20");
+
+const convalidaEmail = (email) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+}
+
+console.log("L'email 'test@example.com' è valida:", convalidaEmail("test@example.com"));
+console.log("L'email 'invalid.email' è valida:", convalidaEmail("invalid.email"));  
+
