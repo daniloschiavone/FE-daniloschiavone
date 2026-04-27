@@ -366,4 +366,28 @@ function rangeArray(arr) {
 let arrayPerRange = [1, 3, 5, 7, 9];
 console.log("La differenza tra il massimo e il minimo è:", rangeArray(arrayPerRange));
 
+//Scrivi una funzione che accetti un array di numeri e restituisca la coppia di elementi la cui somma è più vicina a zero.
+
+console.log("ESERCIZIO 5.21");
+
+function coppiaVicinaZero(arr) {
+    let coppia = [];
+    let sommaMinima = Infinity;
+
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+            let somma = arr[i] + arr[j];
+            if (Math.abs(somma) < Math.abs(sommaMinima)) {
+                sommaMinima = somma;
+                coppia = [arr[i], arr[j]];
+            }
+        }
+    }
+
+    return coppia;
+}
+
+let arrayPerCoppia = [-1, 2, -3, 4, 5];
+console.log("La coppia di elementi la cui somma è più vicina a zero è:", coppiaVicinaZero(arrayPerCoppia));
+
 //
