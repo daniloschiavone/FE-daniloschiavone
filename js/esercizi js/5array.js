@@ -446,3 +446,25 @@ function generaCoppie(arr) {
 let arrayPerCoppie2 = [1, 2, 3];
 console.log("Tutte le coppie possibili:", generaCoppie(arrayPerCoppie2));   
 
+//Scrivi una funzione che accetti due array e restituisca la differenza simmetrica (elementi che sono in uno dei due array ma non in entrambi).
+console.log("ESERCIZIO 5.25");
+
+function differenzaSimmetrica(arr1, arr2) {
+    let differenza = [];    
+    for (let i = 0; i < arr1.length; i++) {
+        if (!arr2.includes(arr1[i]) && !differenza.includes(arr1[i])) {
+            differenza.push(arr1[i]);
+        }   
+    }
+    for (let j = 0; j < arr2.length; j++) {
+        if (!arr1.includes(arr2[j]) && !differenza.includes(arr2[j])) {
+            differenza.push(arr2[j]);
+        }
+    }
+    return differenza;
+}
+
+let arrayA = [1, 2, 3, 4];
+let arrayB = [3, 4, 5, 6];
+console.log("Differenza simmetrica tra i due array:", differenzaSimmetrica(arrayA, arrayB));
+
