@@ -468,3 +468,26 @@ let arrayA = [1, 2, 3, 4];
 let arrayB = [3, 4, 5, 6];
 console.log("Differenza simmetrica tra i due array:", differenzaSimmetrica(arrayA, arrayB));
 
+//Scrivi una funzione che, dato un array di numeri, trovi la sotto-sequenza contigua con la somma più grande e restituisca quella somma.
+//Ad esempio, in [-2, 1, -3, 4, -1, 2, 1, -5, 4] la risposta è 6 (da [4, -1, 2, 1]).
+console.log("ESERCIZIO 5.26");
+
+function sommaMassimaSottoSequenza(arr) {
+    let maxSomma = -Infinity;
+    let sommaCorrente = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        sommaCorrente += arr[i];
+        if (sommaCorrente > maxSomma) {
+            maxSomma = sommaCorrente;
+        }
+        if (sommaCorrente < 0) {
+            sommaCorrente = 0;
+        }
+    }
+
+    return maxSomma;
+}
+
+let arrayPerSottoSequenza = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
+console.log("La somma più grande di una sotto-sequenza contigua è:", sommaMassimaSottoSequenza(arrayPerSottoSequenza));
