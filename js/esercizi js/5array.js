@@ -115,4 +115,14 @@ let array1 = [1, 2, 3, 4];
 let array2 = [3, 4, 5, 6];
 console.log("Elementi comuni tra i due array:", intersezioneArray(array1, array2));
 
+//Scrivi una funzione che accetti un array di stringhe e restituisca l'array ordinato per lunghezza delle stringhe (dalla più corta alla più lunga).
+console.log("ESERCIZIO 5.9");
+
+function ordinaPerLunghezza(arr) {
+    return arr.sort((a, b) => a.length - b.length);
+}
+
+let stringhe = ["casa", "auto", "a", "computer"];
+console.log("Array ordinato per lunghezza:", ordinaPerLunghezza(stringhe));
+
 //
