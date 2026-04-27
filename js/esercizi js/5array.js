@@ -410,4 +410,20 @@ function elementiPiuFrequenti(arr, n) {
 let arrayPerFrequenza = [1, 2, 3, 2, 4, 3, 5, 2];
 console.log("I 2 elementi più frequenti sono:", elementiPiuFrequenti(arrayPerFrequenza, 2));    
 
-//
+//Scrivi una funzione che accetti un array di stringhe e restituisca un array dove le stringhe adiacenti duplicate sono state rimosse. 
+//Ad esempio, ["a", "a", "b", "b", "b", "a"] diventa ["a", "b", "a"].
+
+console.log("ESERCIZIO 5.23");
+
+function rimuoviDuplicatiAdiacenti(arr) {
+    let risultato = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (i === 0 || arr[i] !== arr[i - 1]) {
+            risultato.push(arr[i]);
+        }
+    }
+    return risultato;
+}
+
+let arrayConDuplicatiAdiacenti = ["a", "a", "b", "b", "b", "a"];
+console.log("Array con duplicati adiacenti rimossi:", rimuoviDuplicatiAdiacenti(arrayConDuplicatiAdiacenti));
