@@ -188,3 +188,23 @@ function appiattisciArray(arr) {
 
 let arrayMultidimensionale = [[1, 2], [3, 4], [5]];
 console.log("Array appiattito:", appiattisciArray(arrayMultidimensionale)); 
+
+//Scrivi una funzione che verifichi se un array è un palindromo (si legge uguale da sinistra a destra e da destra a sinistra).
+
+console.log("ESERCIZIO 5.13");
+
+function èPalindromo(arr) {
+    for (let i = 0; i < arr.length / 2; i++) {
+        if (arr[i] !== arr[arr.length - 1 - i]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+let arrayPalindromo = [1, 2, 3, 2, 1];
+console.log("L'array è un palindromo?", èPalindromo(arrayPalindromo));
+
+let arrayNonPalindromo = [1, 2, 3, 4, 5];
+console.log("L'array è un palindromo?", èPalindromo(arrayNonPalindromo));   
+
