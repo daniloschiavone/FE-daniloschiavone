@@ -327,3 +327,18 @@ const somma = (a, b) => a + b;
 const sommaCurrificata = curry(somma);
 console.log("Il risultato di sommaCurrificata(3)(4) è:", sommaCurrificata(3)(4));  
 
+//Scrivi una arrow function caesarCipher che accetti una stringa e uno spostamento,
+//e restituisca la stringa cifrata con il cifrario di Cesare (solo lettere minuscole).
+console.log("ESERCIZIO 4.27");
+
+const caesarCipher = (str, shift) => {
+    return str.split('').map(char => {
+        if (char >= 'a' && char <= 'z') {
+            return String.fromCharCode((char.charCodeAt(0) - 97 + shift) % 26 + 97);
+        }
+        return char;
+    }).join('');
+}
+
+console.log("La stringa 'hello' cifrata con uno spostamento di 3 è:", caesarCipher("hello", 3));
+
