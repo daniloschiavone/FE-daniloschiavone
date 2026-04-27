@@ -314,3 +314,16 @@ const raddoppia = (x) => x * 2;
 const quadratoRaddoppia = compose(quadrato, raddoppia);
 console.log("Il risultato di quadrato(raddoppia(5)) è:", quadratoRaddoppia(5));
 
+//Scrivi una arrow function curry che accetti una funzione a due argomenti e restituisca una versione "currificata". 
+//Ad esempio, se somma(a, b) restituisce a + b, allora curry(somma)(3)(4) restituisce 7.
+
+console.log("ESERCIZIO 4.26");
+
+const curry = (func) => {
+    return (a) => (b) => func(a, b);
+}
+
+const somma = (a, b) => a + b;
+const sommaCurrificata = curry(somma);
+console.log("Il risultato di sommaCurrificata(3)(4) è:", sommaCurrificata(3)(4));  
+
