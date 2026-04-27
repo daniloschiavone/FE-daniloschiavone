@@ -289,3 +289,14 @@ const isPangram = (frase) => {
 
 console.log("La frase 'The quick brown fox jumps over the lazy dog' è un pangramma:", isPangram("The quick brown fox jumps over the lazy dog"));
 console.log("La frase 'Hello, World!' è un pangramma:", isPangram("Hello, World!"));
+
+//Scrivi una arrow function fibonacci che restituisca l'N-esimo numero di Fibonacci in modo ricorsivo.
+console.log("ESERCIZIO 4.24");
+
+const fibonacci = (N) => {
+    if (N <= 0) return 0;
+    if (N === 1) return 1;
+    return fibonacci(N - 1) + fibonacci(N - 2);
+}
+
+console.log("Il 10° numero di Fibonacci è:", fibonacci(10));
