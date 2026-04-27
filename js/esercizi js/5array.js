@@ -66,4 +66,18 @@ function contaValore(arr, valore) {
 let valori = [1, 2, 3, 2, 4, 2, 5];
 console.log("Il valore 2 appare", contaValore(valori, 2), "volte nell'array.");
 
+//Scrivi una funzione che accetti un array di numeri e restituisca la media aritmetica.
+
+console.log("ESERCIZIO 5.6");
+
+function mediaArray(arr) {
+    let somma = 0;
+    for (let i = 0; i < arr.length; i++) {
+        somma += arr[i];
+    }
+    return somma / arr.length;
+}
+
+console.log("La media dell'array è:", mediaArray(numeri));
+
 //
