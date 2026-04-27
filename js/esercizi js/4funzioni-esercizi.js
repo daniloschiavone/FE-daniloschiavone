@@ -169,4 +169,29 @@ const minMax = (...numeri) => {
 
 console.log("Min e Max tra 3, 7, 1, 9 è:", minMax(3, 7, 1, 9));
 
-//
+//Scrivi una arrow function tronca che accetti un numero e un numero di decimali, 
+//e restituisca il numero troncato a quel numero di decimali (senza usare toFixed).
+console.log("ESERCIZIO 4.16");
+
+const tronca = (num, decimali) => {
+    const fattore = Math.pow(10, decimali);
+    return Math.trunc(num * fattore) / fattore;
+}
+
+console.log("Il numero 3.14159 troncato a 2 decimali è:", tronca(3.14159, 2));
+
+//Scrivi una arrow function ripetiFino che accetti una stringa e una lunghezza massima,
+//e restituisca la stringa ripetuta fino a raggiungere quella lunghezza.
+//Ad esempio, ripetiFino("abc", 7) restituisce "abcabca".
+console.log("ESERCIZIO 4.17");
+
+const ripetiFino = (str, lunghezza) => {
+    let risultato = '';
+    while (risultato.length < lunghezza) {
+        risultato += str;
+    }
+    return risultato.slice(0, lunghezza);
+}
+
+console.log("La stringa 'abc' ripetuta fino a raggiungere la lunghezza 7 è:", ripetiFino("abc", 7));
+
