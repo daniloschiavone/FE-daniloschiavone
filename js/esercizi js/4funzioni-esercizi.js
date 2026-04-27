@@ -195,3 +195,46 @@ const ripetiFino = (str, lunghezza) => {
 
 console.log("La stringa 'abc' ripetuta fino a raggiungere la lunghezza 7 è:", ripetiFino("abc", 7));
 
+//Scrivi una arrow function sommaDigiti che accetti un numero intero e restituisca la somma delle sue cifre.
+//Implementala in modo ricorsivo.
+console.log("ESERCIZIO 4.18");
+
+const sommaDigiti = (num) => {
+    if (num === 0) return 0;
+    return (num % 10) + sommaDigiti(Math.floor(num / 10));
+}
+
+console.log("La somma delle cifre di 1234 è:", sommaDigiti(1234));
+
+//Scrivi una arrow function convertiTemperatura che accetti un valore, 
+//un'unità di partenza ("C", "F" o "K") e un'unità di arrivo, e restituisca il valore convertito.
+console.log("ESERCIZIO 4.19");
+
+const convertiTemperatura = (valore, unitaPartenza, unitaArrivo) => {
+    let celsius;
+    if (unitaPartenza === "C") {
+        celsius = valore;
+    } else if (unitaPartenza === "F") {
+        celsius = (valore - 32) * 5/9;
+    } else if (unitaPartenza === "K") {
+        celsius = valore - 273.15;
+    } else {
+        throw new Error("Unità di partenza non valida");
+    }
+
+    if (unitaArrivo === "C") {
+        return celsius;
+    } else if (unitaArrivo === "F") {
+        return (celsius * 9/5) + 32;
+    } else if (unitaArrivo === "K") {
+        return celsius + 273.15;
+    } else {
+        throw new Error("Unità di arrivo non valida");
+    }
+}
+
+console.log("30°C in Fahrenheit è:", convertiTemperatura(30, "C", "F"));
+console.log("86°F in Celsius è:", convertiTemperatura(86, "F", "C"));
+console.log("300K in Celsius è:", convertiTemperatura(300, "K", "C"));  
+
+//
