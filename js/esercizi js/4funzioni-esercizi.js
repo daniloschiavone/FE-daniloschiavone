@@ -342,3 +342,16 @@ const caesarCipher = (str, shift) => {
 
 console.log("La stringa 'hello' cifrata con uno spostamento di 3 è:", caesarCipher("hello", 3));
 
+//Scrivi una arrow function convalidaCF che verifichi se un codice fiscale italiano ha il formato corretto: 
+//16 caratteri, di cui i primi 6 sono lettere, i successivi 2 cifre,
+//poi 1 lettera, poi 2 cifre, poi 1 lettera, poi 3 cifre, poi 1 lettera.
+
+console.log("ESERCIZIO 4.28");
+
+const convalidaCF = (cf) => {
+    const regex = /^[A-Z]{6}\d{2}[A-Z]\d{2}[A-Z]\d{3}[A-Z]$/i;
+    return regex.test(cf);
+}
+
+console.log("Il codice fiscale 'RSSMRA85M01H501Z' è valido:", convalidaCF("RSSMRA85M01H501Z"));
+console.log("Il codice fiscale 'INVALIDCF12345' è valido:", convalidaCF("INVALIDCF12345")); 
