@@ -156,3 +156,17 @@ const sommaFinoA = (N) => {
 }
 
 console.log("La somma dei numeri da 1 a 5 è:", sommaFinoA(5)); 
+
+//Scrivi una arrow function minMax che accetti un numero qualsiasi di argomenti e restituisca un oggetto con min e max.
+console.log("ESERCIZIO 4.15");
+
+const minMax = (...numeri) => {
+    return {
+        min: Math.min(...numeri),
+        max: Math.max(...numeri)
+    };
+}
+
+console.log("Min e Max tra 3, 7, 1, 9 è:", minMax(3, 7, 1, 9));
+
+//
