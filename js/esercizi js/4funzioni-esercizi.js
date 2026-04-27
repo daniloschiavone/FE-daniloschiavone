@@ -115,4 +115,17 @@ const aggiungiUno = (x) => x + 1;
 
 console.log("Applicazione di raddoppia e aggiungiUno a 5:", applicaDue(5, raddoppia, aggiungiUno));
 
-//
+//Scrivi una arrow function ripeti che accetti una funzione e un numero N, e invochi quella funzione N volte.
+console.log("ESERCIZIO 4.12");
+
+const ripeti = (func, N) => {
+    for (let i = 0; i < N; i++) {
+        func();
+    }
+}
+
+const saluta = () => console.log("Ciao!");
+
+console.log("Ripetizione di saluta 3 volte:");
+ripeti(saluta, 3);
+
