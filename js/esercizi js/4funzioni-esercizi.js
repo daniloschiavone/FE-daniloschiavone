@@ -300,3 +300,17 @@ const fibonacci = (N) => {
 }
 
 console.log("Il 10° numero di Fibonacci è:", fibonacci(10));
+
+//Scrivi una arrow function compose che accetti due funzioni f e g e restituisca una nuova funzione che calcola f(g(x)).
+console.log("ESERCIZIO 4.25");
+
+const compose = (f, g) => {
+    return (x) => f(g(x));
+}
+
+const quadrato = (x) => x * x;
+const raddoppia = (x) => x * 2;
+
+const quadratoRaddoppia = compose(quadrato, raddoppia);
+console.log("Il risultato di quadrato(raddoppia(5)) è:", quadratoRaddoppia(5));
+
