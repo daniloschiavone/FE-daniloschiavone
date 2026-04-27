@@ -137,3 +137,34 @@ function ruotaArray(arr, n) {
 
 let arrayDaRuotare = [1, 2, 3, 4, 5];
 console.log("Array ruotato di 2 posizioni:", ruotaArray(arrayDaRuotare, 2));    
+
+//Scrivi una funzione che accetti un array di numeri e restituisca un oggetto con le proprietà min, max, media e somma.
+
+console.log("ESERCIZIO 5.11");
+
+function analizzaArray(arr) {
+    let min = arr[0];
+    let max = arr[0];
+    let somma = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < min) {
+            min = arr[i];
+        }
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+        somma += arr[i];
+    }
+
+    return {
+        min: min,
+        max: max,
+        media: somma / arr.length,
+        somma: somma
+    };
+}
+
+console.log("Analisi dell'array:", analizzaArray(numeri));
+
+//
