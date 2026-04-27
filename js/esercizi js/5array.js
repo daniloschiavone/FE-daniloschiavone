@@ -342,3 +342,28 @@ function elementiDuplicati(arr) {
 
 let arrayConDuplicati2 = [1, 2, 3, 2, 4, 3, 5];
 console.log("Elementi che appaiono più di una volta:", elementiDuplicati(arrayConDuplicati2));
+
+//Scrivi una funzione che accetti un array di numeri e restituisca la differenza tra il valore massimo e il valore minimo (range).
+
+console.log("ESERCIZIO 5.20");
+
+function rangeArray(arr) {
+    let min = arr[0];
+    let max = arr[0];
+
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] < min) {
+            min = arr[i];
+        }
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+
+    return max - min;
+}
+
+let arrayPerRange = [1, 3, 5, 7, 9];
+console.log("La differenza tra il massimo e il minimo è:", rangeArray(arrayPerRange));
+
+//
