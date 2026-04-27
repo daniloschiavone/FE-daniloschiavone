@@ -226,3 +226,18 @@ function sommaCumulativa(arr) {
 let arrayDaCumulare = [1, 2, 3, 4];
 console.log("Array con somma cumulativa:", sommaCumulativa(arrayDaCumulare));
 
+//Scrivi una funzione che accetti un array e restituisca un nuovo array con gli elementi in ordine casuale (shuffle).
+
+console.log("ESERCIZIO 5.15");
+
+function shuffleArray(arr) {
+    let shuffled = arr.slice(); // Crea una copia dell'array originale
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1)); // Genera un indice casuale
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]; // Scambia gli elementi
+    }
+    return shuffled;
+}
+
+let arrayDaMescolare = [1, 2, 3, 4, 5];
+console.log("Array mescolato:", shuffleArray(arrayDaMescolare));
