@@ -427,3 +427,22 @@ function rimuoviDuplicatiAdiacenti(arr) {
 
 let arrayConDuplicatiAdiacenti = ["a", "a", "b", "b", "b", "a"];
 console.log("Array con duplicati adiacenti rimossi:", rimuoviDuplicatiAdiacenti(arrayConDuplicatiAdiacenti));
+
+//Scrivi una funzione che generi tutte le coppie possibili (senza ripetizione) dagli elementi di un array.
+//Ad esempio, [1, 2, 3] produce [[1,2], [1,3], [2,3]].
+
+console.log("ESERCIZIO 5.24");
+
+function generaCoppie(arr) {
+    let coppie = [];
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+            coppie.push([arr[i], arr[j]]);
+        }
+    }
+    return coppie;
+}
+
+let arrayPerCoppie2 = [1, 2, 3];
+console.log("Tutte le coppie possibili:", generaCoppie(arrayPerCoppie2));   
+
