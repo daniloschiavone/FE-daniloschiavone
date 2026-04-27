@@ -272,3 +272,20 @@ const creaPassword = (N) => {
 }
 
 console.log("Una password casuale di 8 caratteri è:", creaPassword(8));
+
+//Scrivi una arrow function isPangram che verifichi se una frase contiene tutte le lettere dell'alfabeto almeno una volta.
+console.log("ESERCIZIO 4.23");
+
+const isPangram = (frase) => {
+    const alfabeto = "abcdefghijklmnopqrstuvwxyz";
+    const fraseLower = frase.toLowerCase();
+    for (let char of alfabeto) {
+        if (!fraseLower.includes(char)) {
+            return false;
+        }
+    }
+    return true;
+}
+
+console.log("La frase 'The quick brown fox jumps over the lazy dog' è un pangramma:", isPangram("The quick brown fox jumps over the lazy dog"));
+console.log("La frase 'Hello, World!' è un pangramma:", isPangram("Hello, World!"));
