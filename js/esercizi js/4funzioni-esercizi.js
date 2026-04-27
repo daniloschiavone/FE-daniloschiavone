@@ -146,4 +146,13 @@ console.log("Contatore chiamato la prima volta:", contatore());
 console.log("Contatore chiamato la seconda volta:", contatore());
 console.log("Contatore chiamato la terza volta:", contatore());
 
-//
+//Scrivi una arrow function sommaFinoA che accetti un numero N e restituisca la somma di tutti i numeri da 1 a N. 
+//Implementala in modo ricorsivo (la funzione chiama se stessa).
+console.log("ESERCIZIO 4.14");
+
+const sommaFinoA = (N) => {
+    if (N <= 1) return N;
+    return N + sommaFinoA(N - 1);
+}
+
+console.log("La somma dei numeri da 1 a 5 è:", sommaFinoA(5)); 
