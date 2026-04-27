@@ -167,4 +167,24 @@ function analizzaArray(arr) {
 
 console.log("Analisi dell'array:", analizzaArray(numeri));
 
-//
+//Scrivi una funzione che "appiattisca" un array multidimensionale di un livello.
+//Ad esempio, [[1, 2], [3, 4], [5]] diventa [1, 2, 3, 4, 5]. Non usare flat().
+
+console.log("ESERCIZIO 5.12");
+
+function appiattisciArray(arr) {
+    let appiattito = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (Array.isArray(arr[i])) {
+            for (let j = 0; j < arr[i].length; j++) {
+                appiattito.push(arr[i][j]);
+            }
+        } else {
+            appiattito.push(arr[i]);
+        }
+    }
+    return appiattito;
+}
+
+let arrayMultidimensionale = [[1, 2], [3, 4], [5]];
+console.log("Array appiattito:", appiattisciArray(arrayMultidimensionale)); 
