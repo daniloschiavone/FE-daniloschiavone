@@ -265,3 +265,18 @@ function secondoMassimo(arr) {
 let arrayPerSecondoMassimo = [1, 3, 5, 7, 9];
 console.log("Il secondo valore più grande è:", secondoMassimo(arrayPerSecondoMassimo)); 
 
+//Scrivi una funzione che accetti un array e lo divida in sotto-array di dimensione N. 
+//Ad esempio, [1, 2, 3, 4, 5] con N=2 diventa [[1, 2], [3, 4], [5]].
+
+console.log("ESERCIZIO 5.17"); 
+
+function dividiInSottoArray(arr, n) {
+    let sottoArray = [];
+    for (let i = 0; i < arr.length; i += n) {
+        sottoArray.push(arr.slice(i, i + n));
+    }
+    return sottoArray;
+}
+
+let arrayDaDividere = [1, 2, 3, 4, 5];
+console.log("Array diviso in sotto-array di dimensione 2:", dividiInSottoArray(arrayDaDividere, 2));
