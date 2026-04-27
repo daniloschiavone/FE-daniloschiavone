@@ -509,3 +509,29 @@ let arrayNonOrdinato = [1, 3, 2, 4, 5];
 console.log("L'array è ordinato in modo crescente:", isSortedAscending(arrayOrdinato));
 console.log("L'array è ordinato in modo crescente:", isSortedAscending(arrayNonOrdinato));
 
+//Scrivi una funzione che implementi la ricerca binaria: accetta un array ordinato e un valore da cercare,
+//e restituisce l'indice del valore o -1 se non trovato.
+
+console.log("ESERCIZIO 5.28");
+
+function ricercaBinaria(arr, valore) {
+    let sinistra = 0;
+    let destra = arr.length - 1;
+
+    while (sinistra <= destra) {
+        let medio = Math.floor((sinistra + destra) / 2);
+        if (arr[medio] === valore) {
+            return medio;
+        } else if (arr[medio] < valore) {
+            sinistra = medio + 1;
+        } else {
+            destra = medio - 1;
+        }
+    }
+
+    return -1; // Valore non trovato
+}
+
+let arrayOrdinato2 = [1, 2, 3, 4, 5];
+console.log("L'indice del valore 3 è:", ricercaBinaria(arrayOrdinato2, 3));
+console.log("L'indice del valore 6 è:", ricercaBinaria(arrayOrdinato2, 6));
