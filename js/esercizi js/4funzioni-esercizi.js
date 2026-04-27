@@ -259,3 +259,16 @@ const mcm = (a, b) => {
 
 console.log("Il minimo comune multiplo di 12 e 15 è:", mcm(12, 15));
 
+//Scrivi una arrow function creaPassword che generi una password casuale di N caratteri, contenente lettere maiuscole, minuscole e cifre.
+console.log("ESERCIZIO 4.22");
+
+const creaPassword = (N) => {
+    const caratteri = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    let password = "";
+    for (let i = 0; i < N; i++) {
+        password += caratteri.charAt(Math.floor(Math.random() * caratteri.length));
+    }
+    return password;
+}
+
+console.log("Una password casuale di 8 caratteri è:", creaPassword(8));
