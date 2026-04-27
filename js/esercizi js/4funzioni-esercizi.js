@@ -129,3 +129,21 @@ const saluta = () => console.log("Ciao!");
 console.log("Ripetizione di saluta 3 volte:");
 ripeti(saluta, 3);
 
+//Scrivi una arrow function creaContatore che restituisca una funzione. Ogni volta che la funzione restituita viene chiamata, 
+// deve restituire il numero successivo (partendo da 1).
+console.log("ESERCIZIO 4.13");
+
+const creaContatore = () => {
+    let count = 0;
+    return () => {
+        count++;
+        return count;
+    }
+}
+
+const contatore = creaContatore();
+console.log("Contatore chiamato la prima volta:", contatore());
+console.log("Contatore chiamato la seconda volta:", contatore());
+console.log("Contatore chiamato la terza volta:", contatore());
+
+//
