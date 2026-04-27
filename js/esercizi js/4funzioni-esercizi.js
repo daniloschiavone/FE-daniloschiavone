@@ -249,3 +249,13 @@ const convalidaEmail = (email) => {
 console.log("L'email 'test@example.com' è valida:", convalidaEmail("test@example.com"));
 console.log("L'email 'invalid.email' è valida:", convalidaEmail("invalid.email"));  
 
+//Scrivi una arrow function mcm che calcoli il minimo comune multiplo di due numeri.
+console.log("ESERCIZIO 4.21");
+
+const mcm = (a, b) => {
+    const gcd = (x, y) => y === 0 ? x : gcd(y, x % y);
+    return (a * b) / gcd(a, b);
+}
+
+console.log("Il minimo comune multiplo di 12 e 15 è:", mcm(12, 15));
+
