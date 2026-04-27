@@ -125,4 +125,15 @@ function ordinaPerLunghezza(arr) {
 let stringhe = ["casa", "auto", "a", "computer"];
 console.log("Array ordinato per lunghezza:", ordinaPerLunghezza(stringhe));
 
-//
+//Scrivi una funzione che accetti un array e lo "ruoti" di N posizioni verso destra. 
+//Ad esempio, [1, 2, 3, 4, 5] ruotato di 2 posizioni diventa [4, 5, 1, 2, 3].
+
+console.log("ESERCIZIO 5.10");
+
+function ruotaArray(arr, n) {
+    n = n % arr.length; // In caso n sia maggiore della lunghezza dell'array
+    return arr.slice(-n).concat(arr.slice(0, -n));
+}
+
+let arrayDaRuotare = [1, 2, 3, 4, 5];
+console.log("Array ruotato di 2 posizioni:", ruotaArray(arrayDaRuotare, 2));    
