@@ -241,3 +241,27 @@ function shuffleArray(arr) {
 
 let arrayDaMescolare = [1, 2, 3, 4, 5];
 console.log("Array mescolato:", shuffleArray(arrayDaMescolare));
+
+//Scrivi una funzione che accetti un array di numeri e restituisca il secondo valore più grande.
+
+console.log("ESERCIZIO 5.16");
+
+function secondoMassimo(arr) {
+    let max = -Infinity;
+    let secondoMax = -Infinity;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > max) {
+            secondoMax = max;
+            max = arr[i];
+        } else if (arr[i] > secondoMax && arr[i] !== max) {
+            secondoMax = arr[i];
+        }
+    }
+
+    return secondoMax;
+}
+
+let arrayPerSecondoMassimo = [1, 3, 5, 7, 9];
+console.log("Il secondo valore più grande è:", secondoMassimo(arrayPerSecondoMassimo)); 
+
