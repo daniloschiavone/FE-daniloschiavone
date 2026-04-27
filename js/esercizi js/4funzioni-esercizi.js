@@ -29,3 +29,12 @@ const massimo = (a, b, c) => {
     return Math.max(a, b, c);
 }
 console.log("Il massimo tra 5, 10 e 3 è:", massimo(5, 10, 3));
+
+//Scrivi una arrow function isPari che accetti un numero e restituisca true se è pari, false altrimenti.
+console.log("ESERCIZIO 4.5");
+
+const isPari = (numero) => {
+    return numero % 2 === 0;
+}
+console.log("Il numero 4 è pari?", isPari(4));
+console.log("Il numero 7 è pari?", isPari(7));  
