@@ -80,4 +80,21 @@ function mediaArray(arr) {
 
 console.log("La media dell'array è:", mediaArray(numeri));
 
+//Scrivi una funzione che accetti un array e restituisca un nuovo array senza elementi duplicati.
+
+console.log("ESERCIZIO 5.7");
+
+function rimuoviDuplicati(arr) {
+    let unico = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (!unico.includes(arr[i])) {
+            unico.push(arr[i]);
+        }
+    }
+    return unico;
+}
+
+let arrayConDuplicati = [1, 2, 3, 2, 4, 3, 5];
+console.log("Array senza duplicati:", rimuoviDuplicati(arrayConDuplicati));
+
 //
