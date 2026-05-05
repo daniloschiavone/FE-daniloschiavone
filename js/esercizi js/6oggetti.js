@@ -227,3 +227,37 @@ contoBancario.mostraSaldo();
 contoBancario.preleva(2000);
 contoBancario.preleva(300);
 contoBancario.mostraSaldo();
+
+//Dato un oggetto annidato che rappresenta una struttura ad albero (un'azienda con dipartimenti e dipendenti),
+//scrivi una funzione che conti il numero totale di dipendenti.
+
+console.log("Esercizio 6.12");
+
+const azienda = {
+    nome: "Tech Solutions",
+    dipartimenti: [
+        {
+            nome: "Sviluppo",
+            dipendenti: ["Alice", "Bob"]
+        },
+        {
+            nome: "Marketing",
+            dipendenti: ["Charlie"]
+        },
+        {
+            nome: "Vendite",
+            dipendenti: ["David", "Eve", "Frank"]
+        }
+    ]
+};
+
+function contaDipendenti(azienda) {
+    let totaleDipendenti = 0;
+    for (let dipartimento of azienda.dipartimenti) {
+        totaleDipendenti += dipartimento.dipendenti.length;
+    }
+    return totaleDipendenti;
+}
+
+console.log("Il numero totale di dipendenti è:", contaDipendenti(azienda));
+
