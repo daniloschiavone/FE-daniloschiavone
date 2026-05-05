@@ -404,3 +404,33 @@ console.log("Cerca per nome 'Alice':", rubrica.cercaPerNome("Alice"));
 console.log("Cerca per telefono '0987654321':", rubrica.cercaPerTelefono("0987654321"));
 rubrica.rimuoviContatto("Alice");
 rubrica.mostraTutti();  
+
+//Scrivi una funzione che accetti un oggetto con proprietà annidate e un "percorso" come stringa (es. "indirizzo.citta")
+//e restituisca il valore corrispondente, oppure undefined se il percorso non esiste.
+
+console.log("Esercizio 6.18");
+
+function getValorePercorso(obj, percorso) {
+    const chiavi = percorso.split('.');
+    let valore = obj;
+    for (let chiave of chiavi) {
+        if (valore && valore.hasOwnProperty(chiave)) {
+            valore = valore[chiave];
+        } else {
+            return undefined;
+        }
+    }
+    return valore;
+}
+
+const personaConIndirizzo = {
+    nome: "Luca",
+    indirizzo: {
+        citta: "Roma",
+        via: "Via Roma 1"
+    }
+};
+
+console.log("Valore percorso 'indirizzo.citta':", getValorePercorso(personaConIndirizzo, "indirizzo.citta"));
+console.log("Valore percorso 'indirizzo.via':", getValorePercorso(personaConIndirizzo, "indirizzo.via"));
+console.log("Valore percorso 'indirizzo.cap':", getValorePercorso(personaConIndirizzo, "indirizzo.cap"));
