@@ -474,3 +474,27 @@ function riepilogoTransazioni(transazioni) {
 }
 
 console.log("Riepilogo transazioni:", riepilogoTransazioni(transazioni));   
+
+//Scrivi una funzione che "appiattisca" un oggetto annidato. Ad esempio:
+
+// Input: { a: 1, b: { c: 2, d: { e: 3 } } }
+// Output: { "a": 1, "b.c": 2, "b.d.e": 3 }
+
+console.log("Esercizio 6.20");
+
+function appiattisci(obj, prefisso = '', risultato = {}) {
+    for (let chiave in obj) {
+        if (obj.hasOwnProperty(chiave)) {
+            const nuovoPrefisso = prefisso ? `${prefisso}.${chiave}` : chiave;
+            if (typeof obj[chiave] === 'object' && obj[chiave] !== null) {
+                appiattisci(obj[chiave], nuovoPrefisso, risultato);
+            } else {
+                risultato[nuovoPrefisso] = obj[chiave];
+            }
+        }
+    }
+    return risultato;
+}
+
+const oggettoAnnidato = { a: 1, b: { c: 2, d: { e: 3 } } };
+console.log("Oggetto appiattito:", appiattisci(oggettoAnnidato));
