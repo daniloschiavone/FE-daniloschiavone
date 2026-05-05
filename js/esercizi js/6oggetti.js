@@ -31,3 +31,19 @@ const rettangolo = {
 
 console.log("Area del rettangolo:", rettangolo.area());
 console.log("Perimetro del rettangolo:", rettangolo.perimetro());
+
+//Scrivi una funzione che accetti un oggetto e restituisca il numero delle sue proprietà.
+
+console.log("Esercizio 6.3");
+
+function contaProprieta(obj) {
+    return Object.keys(obj).length;
+}
+
+const persona = {
+    nome: "Mario",
+    cognome: "Rossi",
+    età: 30
+};
+
+console.log("Numero di proprietà dell'oggetto persona:", contaProprieta(persona));
