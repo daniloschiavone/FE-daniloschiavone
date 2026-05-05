@@ -434,3 +434,43 @@ const personaConIndirizzo = {
 console.log("Valore percorso 'indirizzo.citta':", getValorePercorso(personaConIndirizzo, "indirizzo.citta"));
 console.log("Valore percorso 'indirizzo.via':", getValorePercorso(personaConIndirizzo, "indirizzo.via"));
 console.log("Valore percorso 'indirizzo.cap':", getValorePercorso(personaConIndirizzo, "indirizzo.cap"));
+
+//Dato un array di oggetti che rappresentano transazioni { data, tipo, importo, categoria },
+//scrivi una funzione che restituisca un oggetto riepilogo con: totale entrate, totale uscite, saldo, e importo per categoria.
+
+console.log("Esercizio 6.19");
+
+const transazioni = [
+    { data: "2024-01-01", tipo: "entrata", importo: 1000, categoria: "stipendio" },
+    { data: "2024-01-05", tipo: "uscita", importo: 200, categoria: "spese" },
+    { data: "2024-01-10", tipo: "entrata", importo: 500, categoria: "freelance" },
+    { data: "2024-01-15", tipo: "uscita", importo: 300, categoria: "spese" }
+];
+
+function riepilogoTransazioni(transazioni) {
+    const riepilogo = {
+        totaleEntrate: 0,
+        totaleUscite: 0,
+        saldo: 0,
+        importoPerCategoria: {} 
+    };
+
+    for (let transazione of transazioni) {
+        if (transazione.tipo === "entrata") {
+            riepilogo.totaleEntrate += transazione.importo;
+            riepilogo.saldo += transazione.importo;
+        } else if (transazione.tipo === "uscita") {
+            riepilogo.totaleUscite += transazione.importo;
+            riepilogo.saldo -= transazione.importo;
+        }
+
+        if (!riepilogo.importoPerCategoria[transazione.categoria]) {
+            riepilogo.importoPerCategoria[transazione.categoria] = 0;
+        }
+        riepilogo.importoPerCategoria[transazione.categoria] += transazione.importo;
+    }
+
+    return riepilogo;
+}
+
+console.log("Riepilogo transazioni:", riepilogoTransazioni(transazioni));   
