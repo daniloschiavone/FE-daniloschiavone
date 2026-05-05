@@ -143,6 +143,11 @@ console.log("Oggetto invertito:", oggettoInvertito);
 //{ categoria: "verdura", valore: "carota" },
 //{ categoria: "frutta", valore: "pera" }
 // ]
+//output:
+// {
+//frutta: ["mela", "pera"],
+//verdura: ["carota"]
+// }
 
 console.log("Esercizio 6.9");
 
@@ -164,4 +169,32 @@ const oggetti = [
 ];
 
 console.log("Oggetti raggruppati per categoria:", raggruppaPerCategoria(oggetti));
+
+//Scrivi una funzione che confronti due oggetti e restituisca true se hanno le stesse proprietà con gli stessi valori (confronto superficiale).
+
+console.log("Esercizio 6.10");
+
+function confrontaOggetti(obj1, obj2) {
+    const chiavi1 = Object.keys(obj1);
+    const chiavi2 = Object.keys(obj2);
+
+    if (chiavi1.length !== chiavi2.length) {
+        return false;
+    }
+
+    for (let chiave of chiavi1) {
+        if (obj1[chiave] !== obj2[chiave]) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+const oggettoA = { a: 1, b: 2 };
+const oggettoB = { a: 1, b: 2 };
+const oggettoC = { a: 1, b: 3 };
+
+console.log("Oggetti A e B sono uguali:", confrontaOggetti(oggettoA, oggettoB));
+console.log("Oggetti A e C sono uguali:", confrontaOggetti(oggettoA, oggettoC));
 
