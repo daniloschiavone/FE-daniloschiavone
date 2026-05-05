@@ -534,3 +534,48 @@ const oggetto2 = { b: 2, c: 4, d: 5 };
 
 console.log("Differenze tra oggetto1 e oggetto2:", differenze(oggetto1, oggetto2));
 
+//Crea un oggetto inventario che gestisca prodotti. Ogni prodotto ha nome, prezzo, quantita e categoria. Aggiungi i metodi:
+//aggiungiProdotto, rimuoviProdotto, aggiornaProdotto, cercaPerCategoria, prodottiSottoscorta(soglia) e valoreInventario.
+
+console.log("Esercizio 6.22");
+
+const inventario = {
+    prodotti: [],
+    aggiungiProdotto: function(nome, prezzo, quantita, categoria) {
+        this.prodotti.push({ nome, prezzo, quantita, categoria });
+    },
+    rimuoviProdotto: function(nome) {
+        this.prodotti = this.prodotti.filter(prodotto => prodotto.nome !== nome);
+    },
+    aggiornaProdotto: function(nome, nuovoPrezzo, nuovaQuantita) {
+        const prodotto = this.prodotti.find(prodotto => prodotto.nome === nome);
+        if (prodotto) {
+            prodotto.prezzo = nuovoPrezzo;
+            prodotto.quantita = nuovaQuantita;
+        }
+    },
+    cercaPerCategoria: function(categoria) {
+        return this.prodotti.filter(prodotto => prodotto.categoria === categoria);
+    },
+    prodottiSottoscorta: function(soglia) {
+        return this.prodotti.filter(prodotto => prodotto.quantita < soglia);
+    },
+    valoreInventario: function() {
+        return this.prodotti.reduce((totale, prodotto) => totale + (prodotto.prezzo * prodotto.quantita), 0);
+    }
+};
+
+inventario.aggiungiProdotto("Prodotto A", 10, 5, "Categoria 1");
+inventario.aggiungiProdotto("Prodotto B", 20, 2, "Categoria 2");
+inventario.aggiungiProdotto("Prodotto C", 15, 10, "Categoria 1");
+
+console.log("Prodotti in categoria 1:", inventario.cercaPerCategoria("Categoria 1"));
+console.log("Prodotti sottoscorta (soglia 3):", inventario.prodottiSottoscorta(3));
+console.log("Valore totale dell'inventario:", inventario.valoreInventario());
+
+inventario.aggiornaProdotto("Prodotto A", 12, 4);
+console.log("Valore totale dell'inventario dopo aggiornamento:", inventario.valoreInventario());
+
+inventario.rimuoviProdotto("Prodotto B");
+console.log("Valore totale dell'inventario dopo rimozione:", inventario.valoreInventario());
+
