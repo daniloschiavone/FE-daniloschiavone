@@ -579,3 +579,32 @@ console.log("Valore totale dell'inventario dopo aggiornamento:", inventario.valo
 inventario.rimuoviProdotto("Prodotto B");
 console.log("Valore totale dell'inventario dopo rimozione:", inventario.valoreInventario());
 
+//Scrivi una funzione che accetti un array di oggetti e una funzione di confronto,
+//e restituisca un oggetto con min e max secondo quel criterio.
+
+console.log("Esercizio 6.23");
+
+function minMax(arr, confronto) {
+    if (arr.length === 0) {
+        return { min: null, max: null };
+    }
+
+    let min = arr[0];
+    let max = arr[0];
+
+    for (let item of arr) {
+        if (confronto(item, min) < 0) {
+            min = item;
+        }
+        if (confronto(item, max) > 0) {
+            max = item;
+        }
+    }
+
+    return { min, max };
+}
+
+const numeri = [5, 2, 9, 1, 5, 6];
+const risultato = minMax(numeri, (a, b) => a - b);
+console.log("Minimo:", risultato.min);
+console.log("Massimo:", risultato.max);
