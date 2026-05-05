@@ -47,3 +47,13 @@ const persona = {
 };
 
 console.log("Numero di proprietà dell'oggetto persona:", contaProprieta(persona));
+
+//Scrivi una funzione che accetti un oggetto persona (con nome, cognome, eta) e restituisca una stringa di presentazione formattata.
+
+console.log("Esercizio 6.4");
+
+function presentazione(persona) {
+    return `Ciao, mi chiamo ${persona.nome} ${persona.cognome} e ho ${persona.età} anni.`;
+}
+
+console.log(presentazione(persona));
