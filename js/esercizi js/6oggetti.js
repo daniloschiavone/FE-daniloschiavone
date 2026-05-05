@@ -261,3 +261,29 @@ function contaDipendenti(azienda) {
 
 console.log("Il numero totale di dipendenti è:", contaDipendenti(azienda));
 
+//Scrivi una funzione che accetti un array di oggetti e una chiave, e restituisca un nuovo array ordinato per il valore di quella chiave.
+//Ad esempio, ordinare [{nome: "Zara", eta: 20}, {nome: "Anna", eta: 25}] per "nome".
+
+console.log("Esercizio 6.13");
+
+function ordinaPerChiave(arr, chiave) {
+    return arr.sort((a, b) => {
+        if (a[chiave] < b[chiave]) {
+            return -1;
+        }
+        if (a[chiave] > b[chiave]) {
+            return 1;
+        }
+        return 0;
+    });
+}
+
+const persone = [
+    { nome: "Zara", eta: 20 },
+    { nome: "Anna", eta: 25 },
+    { nome: "Luca", eta: 22 }
+];
+
+console.log("Persone ordinate per nome:", ordinaPerChiave(persone, "nome"));
+console.log("Persone ordinate per età:", ordinaPerChiave(persone, "eta"));
+
