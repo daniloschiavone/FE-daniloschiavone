@@ -135,3 +135,33 @@ function invertiChiaviValori(obj) {
 const oggettoOriginale = { a: 1, b: 2 };
 const oggettoInvertito = invertiChiaviValori(oggettoOriginale);
 console.log("Oggetto invertito:", oggettoInvertito);
+
+//Scrivi una funzione che, dato un array di oggetti con proprietà categoria e valore, 
+//raggruppi gli oggetti per categoria in un nuovo oggetto. Ad esempio:
+// [
+//{ categoria: "frutta", valore: "mela" },
+//{ categoria: "verdura", valore: "carota" },
+//{ categoria: "frutta", valore: "pera" }
+// ]
+
+console.log("Esercizio 6.9");
+
+function raggruppaPerCategoria(arr) {
+    const raggruppato = {};
+    for (let item of arr) {
+        if (!raggruppato[item.categoria]) {
+            raggruppato[item.categoria] = [];
+        }
+        raggruppato[item.categoria].push(item.valore);
+    }
+    return raggruppato;
+}
+
+const oggetti = [
+    { categoria: "frutta", valore: "mela" },
+    { categoria: "verdura", valore: "carota" },
+    { categoria: "frutta", valore: "pera" }
+];
+
+console.log("Oggetti raggruppati per categoria:", raggruppaPerCategoria(oggetti));
+
