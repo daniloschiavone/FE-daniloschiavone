@@ -57,3 +57,18 @@ function presentazione(persona) {
 }
 
 console.log(presentazione(persona));
+
+//Scrivi una funzione che accetti due oggetti e restituisca un nuovo oggetto che sia la fusione dei due 
+//(le proprietà del secondo sovrascrivono quelle del primo in caso di conflitto).
+
+console.log("Esercizio 6.5");
+
+function fusione(obj1, obj2) {
+    return { ...obj1, ...obj2 };
+}
+
+const oggetto1 = { a: 1, b: 2 };
+const oggetto2 = { b: 3, c: 4 };
+
+const oggettoFuso = fusione(oggetto1, oggetto2);
+console.log("Oggetto fuso:", oggettoFuso);  
