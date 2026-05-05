@@ -287,3 +287,45 @@ const persone = [
 console.log("Persone ordinate per nome:", ordinaPerChiave(persone, "nome"));
 console.log("Persone ordinate per età:", ordinaPerChiave(persone, "eta"));
 
+//Scrivi una funzione che accetti un oggetto e restituisca una copia profonda (deep clone) dell'oggetto,
+//gestendo oggetti e array annidati. Non usare JSON.parse(JSON.stringify()).
+
+console.log("Esercizio 6.14");
+
+function deepClone(obj) {
+    if (obj === null || typeof obj !== 'object') {
+        return obj;
+    }
+
+    if (Array.isArray(obj)) {
+        return obj.map(item => deepClone(item));
+    }
+
+    const clone = {};
+    for (let chiave in obj) {
+        if (obj.hasOwnProperty(chiave)) {
+            clone[chiave] = deepClone(obj[chiave]);
+        }
+    }
+    return clone;
+}
+
+const oggettoOriginale = {
+    nome: "Mario",
+    dettagli: {
+        eta: 30,
+        hobby: ["calcio", "cucina"]
+    }
+};
+
+const oggettoClonato = deepClone(oggettoOriginale);
+console.log("Oggetto originale:", oggettoOriginale);
+console.log("Oggetto clonato:", oggettoClonato);
+
+//Modifica il clone e verifica che l'originale non sia stato modificato
+oggettoClonato.dettagli.eta = 31;
+oggettoClonato.dettagli.hobby.push("lettura");
+
+console.log("Oggetto originale dopo modifica al clone:", oggettoOriginale);
+console.log("Oggetto clonato dopo modifica:", oggettoClonato); 
+
