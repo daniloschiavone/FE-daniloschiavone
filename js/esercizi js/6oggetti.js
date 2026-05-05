@@ -13,3 +13,21 @@ console.log("Titolo:", libro.titolo);
 console.log("Autore:", libro.autore);
 console.log("Anno di pubblicazione:", libro.annoPubblicazione);
 console.log("Pagine:", libro.pagine);
+
+//Crea un oggetto rettangolo con le proprietà base e altezza, e i metodi area e perimetro che restituiscano i rispettivi valori.
+
+console.log("Esercizio 6.2");
+
+const rettangolo = {
+    base: 5,
+    altezza: 3,
+    area: function() {
+        return this.base * this.altezza;
+    },
+    perimetro: function() {
+        return 2 * (this.base + this.altezza);
+    }
+};
+
+console.log("Area del rettangolo:", rettangolo.area());
+console.log("Perimetro del rettangolo:", rettangolo.perimetro());
