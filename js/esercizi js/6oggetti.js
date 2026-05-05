@@ -116,3 +116,22 @@ function totaleOrdine(carrello) {
 }
 
 console.log("Il totale dell'ordine è:", totaleOrdine(carrello));
+
+//Scrivi una funzione che accetti un oggetto e restituisca un nuovo oggetto con chiavi e valori invertiti.
+//Ad esempio, { a: 1, b: 2 } diventa { 1: "a", 2: "b" }.
+
+console.log("Esercizio 6.8");
+
+function invertiChiaviValori(obj) {
+    const invertito = {};
+    for (let chiave in obj) {
+        if (obj.hasOwnProperty(chiave)) {
+            invertito[obj[chiave]] = chiave;
+        }
+    }
+    return invertito;
+}
+
+const oggettoOriginale = { a: 1, b: 2 };
+const oggettoInvertito = invertiChiaviValori(oggettoOriginale);
+console.log("Oggetto invertito:", oggettoInvertito);
