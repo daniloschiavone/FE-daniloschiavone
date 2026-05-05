@@ -353,3 +353,20 @@ const personaCompleta = {
 const personaSelezionata = pick(personaCompleta, ["nome", "professione"]);
 console.log("Persona selezionata:", personaSelezionata);    
 
+//Scrivi una funzione omit che accetti un oggetto e un array di chiavi, e restituisca un nuovo oggetto senza quelle proprietà.
+
+console.log("Esercizio 6.16");
+
+function omit(obj, chiavi) {
+    const risultato = {};
+    for (let chiave in obj) {
+        if (obj.hasOwnProperty(chiave) && !chiavi.includes(chiave)) {
+            risultato[chiave] = obj[chiave];
+        }
+    }
+    return risultato;
+}
+
+const personaOmmessa = omit(personaCompleta, ["cognome", "eta"]);
+console.log("Persona omessa:", personaOmmessa); 
+
