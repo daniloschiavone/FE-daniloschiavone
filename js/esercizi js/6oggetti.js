@@ -95,3 +95,24 @@ function studenteMigliore(studenti) {
 }
 
 console.log("Lo studente con il voto più alto è:", studenteMigliore(studenti));
+
+//Dato un array di oggetti { nome, prezzo, quantita } che rappresentano prodotti in un carrello,
+//scrivi una funzione che calcoli il totale dell'ordine.
+
+console.log("Esercizio 6.7");
+
+const carrello = [
+    { nome: "Prodotto A", prezzo: 10, quantita: 2 },
+    { nome: "Prodotto B", prezzo: 15, quantita: 1 },
+    { nome: "Prodotto C", prezzo: 5, quantita: 4 }
+];
+
+function totaleOrdine(carrello) {
+    let totale = 0;
+    for (let prodotto of carrello) {
+        totale += prodotto.prezzo * prodotto.quantita;
+    }
+    return totale;
+}
+
+console.log("Il totale dell'ordine è:", totaleOrdine(carrello));
