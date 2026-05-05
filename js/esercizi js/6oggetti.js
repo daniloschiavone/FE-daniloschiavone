@@ -1,5 +1,6 @@
 //Crea un oggetto libro con le proprietà: titolo, autore, annoPubblicazione, pagine. Stampa ogni proprietà.
 
+{
 console.log("Esercizio 6.1");
 
 const libro = {
@@ -13,9 +14,11 @@ console.log("Titolo:", libro.titolo);
 console.log("Autore:", libro.autore);
 console.log("Anno di pubblicazione:", libro.annoPubblicazione);
 console.log("Pagine:", libro.pagine);
+}
 
 //Crea un oggetto rettangolo con le proprietà base e altezza, e i metodi area e perimetro che restituiscano i rispettivi valori.
 
+{
 console.log("Esercizio 6.2");
 
 const rettangolo = {
@@ -31,9 +34,11 @@ const rettangolo = {
 
 console.log("Area del rettangolo:", rettangolo.area());
 console.log("Perimetro del rettangolo:", rettangolo.perimetro());
+}
 
 //Scrivi una funzione che accetti un oggetto e restituisca il numero delle sue proprietà.
 
+{
 console.log("Esercizio 6.3");
 
 function contaProprieta(obj) {
@@ -47,20 +52,30 @@ const persona = {
 };
 
 console.log("Numero di proprietà dell'oggetto persona:", contaProprieta(persona));
+}
 
 //Scrivi una funzione che accetti un oggetto persona (con nome, cognome, eta) e restituisca una stringa di presentazione formattata.
 
+{
 console.log("Esercizio 6.4");
+
+const persona = {
+    nome: "Mario",
+    cognome: "Rossi",
+    età: 30
+};
 
 function presentazione(persona) {
     return `Ciao, mi chiamo ${persona.nome} ${persona.cognome} e ho ${persona.età} anni.`;
 }
 
 console.log(presentazione(persona));
+}
 
 //Scrivi una funzione che accetti due oggetti e restituisca un nuovo oggetto che sia la fusione dei due 
 //(le proprietà del secondo sovrascrivono quelle del primo in caso di conflitto).
 
+{
 console.log("Esercizio 6.5");
 
 function fusione(obj1, obj2) {
@@ -72,10 +87,12 @@ const oggetto2 = { b: 3, c: 4 };
 
 const oggettoFuso = fusione(oggetto1, oggetto2);
 console.log("Oggetto fuso:", oggettoFuso);  
+}
 
 //Dato un array di oggetti che rappresentano studenti (ciascuno con nome e voto),
 //scrivi una funzione che restituisca il nome dello studente con il voto più alto.
 
+{
 console.log("Esercizio 6.6");
 
 const studenti = [
@@ -95,10 +112,12 @@ function studenteMigliore(studenti) {
 }
 
 console.log("Lo studente con il voto più alto è:", studenteMigliore(studenti));
+}
 
 //Dato un array di oggetti { nome, prezzo, quantita } che rappresentano prodotti in un carrello,
 //scrivi una funzione che calcoli il totale dell'ordine.
 
+{
 console.log("Esercizio 6.7");
 
 const carrello = [
@@ -116,10 +135,12 @@ function totaleOrdine(carrello) {
 }
 
 console.log("Il totale dell'ordine è:", totaleOrdine(carrello));
+}
 
 //Scrivi una funzione che accetti un oggetto e restituisca un nuovo oggetto con chiavi e valori invertiti.
 //Ad esempio, { a: 1, b: 2 } diventa { 1: "a", 2: "b" }.
 
+{
 console.log("Esercizio 6.8");
 
 function invertiChiaviValori(obj) {
@@ -135,6 +156,7 @@ function invertiChiaviValori(obj) {
 const oggettoOriginale = { a: 1, b: 2 };
 const oggettoInvertito = invertiChiaviValori(oggettoOriginale);
 console.log("Oggetto invertito:", oggettoInvertito);
+}
 
 //Scrivi una funzione che, dato un array di oggetti con proprietà categoria e valore, 
 //raggruppi gli oggetti per categoria in un nuovo oggetto. Ad esempio:
@@ -149,6 +171,7 @@ console.log("Oggetto invertito:", oggettoInvertito);
 //verdura: ["carota"]
 // }
 
+{
 console.log("Esercizio 6.9");
 
 function raggruppaPerCategoria(arr) {
@@ -169,9 +192,11 @@ const oggetti = [
 ];
 
 console.log("Oggetti raggruppati per categoria:", raggruppaPerCategoria(oggetti));
+}
 
 //Scrivi una funzione che confronti due oggetti e restituisca true se hanno le stesse proprietà con gli stessi valori (confronto superficiale).
 
+{
 console.log("Esercizio 6.10");
 
 function confrontaOggetti(obj1, obj2) {
@@ -197,10 +222,12 @@ const oggettoC = { a: 1, b: 3 };
 
 console.log("Oggetti A e B sono uguali:", confrontaOggetti(oggettoA, oggettoB));
 console.log("Oggetti A e C sono uguali:", confrontaOggetti(oggettoA, oggettoC));
+}
 
 //Crea un oggetto contoBancario con le proprietà titolare e saldo, e i metodi deposita, preleva e mostraSaldo.
 //Il metodo preleva non deve permettere di andare in negativo.
 
+{
 console.log("Esercizio 6.11");
 
 const contoBancario = {
@@ -227,10 +254,12 @@ contoBancario.mostraSaldo();
 contoBancario.preleva(2000);
 contoBancario.preleva(300);
 contoBancario.mostraSaldo();
+}
 
 //Dato un oggetto annidato che rappresenta una struttura ad albero (un'azienda con dipartimenti e dipendenti),
 //scrivi una funzione che conti il numero totale di dipendenti.
 
+{
 console.log("Esercizio 6.12");
 
 const azienda = {
@@ -260,10 +289,12 @@ function contaDipendenti(azienda) {
 }
 
 console.log("Il numero totale di dipendenti è:", contaDipendenti(azienda));
+}
 
 //Scrivi una funzione che accetti un array di oggetti e una chiave, e restituisca un nuovo array ordinato per il valore di quella chiave.
 //Ad esempio, ordinare [{nome: "Zara", eta: 20}, {nome: "Anna", eta: 25}] per "nome".
 
+{
 console.log("Esercizio 6.13");
 
 function ordinaPerChiave(arr, chiave) {
@@ -286,10 +317,12 @@ const persone = [
 
 console.log("Persone ordinate per nome:", ordinaPerChiave(persone, "nome"));
 console.log("Persone ordinate per età:", ordinaPerChiave(persone, "eta"));
+}
 
 //Scrivi una funzione che accetti un oggetto e restituisca una copia profonda (deep clone) dell'oggetto,
 //gestendo oggetti e array annidati. Non usare JSON.parse(JSON.stringify()).
 
+{
 console.log("Esercizio 6.14");
 
 function deepClone(obj) {
@@ -328,9 +361,11 @@ oggettoClonato.dettagli.hobby.push("lettura");
 
 console.log("Oggetto originale dopo modifica al clone:", oggettoOriginale);
 console.log("Oggetto clonato dopo modifica:", oggettoClonato); 
+}
 
 //Scrivi una funzione pick che accetti un oggetto e un array di chiavi, e restituisca un nuovo oggetto con solo quelle proprietà.
 
+{
 console.log("Esercizio 6.15");
 
 function pick(obj, chiavi) {
@@ -352,10 +387,19 @@ const personaCompleta = {
 
 const personaSelezionata = pick(personaCompleta, ["nome", "professione"]);
 console.log("Persona selezionata:", personaSelezionata);    
+}
 
 //Scrivi una funzione omit che accetti un oggetto e un array di chiavi, e restituisca un nuovo oggetto senza quelle proprietà.
 
+{
 console.log("Esercizio 6.16");
+
+const personaCompleta = {
+    nome: "Giulia",
+    cognome: "Bianchi",
+    eta: 28,
+    professione: "Ingegnere"
+};
 
 function omit(obj, chiavi) {
     const risultato = {};
@@ -369,10 +413,12 @@ function omit(obj, chiavi) {
 
 const personaOmmessa = omit(personaCompleta, ["cognome", "eta"]);
 console.log("Persona omessa:", personaOmmessa); 
+}
 
 //Crea un oggetto rubrica con un array interno di contatti (ciascuno con nome, telefono, email).
 //Aggiungi i metodi: aggiungiContatto, rimuoviContatto, cercaPerNome, cercaPerTelefono e mostraTutti.
 
+{
 console.log("Esercizio 6.17");
 
 const rubrica = {
@@ -404,10 +450,12 @@ console.log("Cerca per nome 'Alice':", rubrica.cercaPerNome("Alice"));
 console.log("Cerca per telefono '0987654321':", rubrica.cercaPerTelefono("0987654321"));
 rubrica.rimuoviContatto("Alice");
 rubrica.mostraTutti();  
+}
 
 //Scrivi una funzione che accetti un oggetto con proprietà annidate e un "percorso" come stringa (es. "indirizzo.citta")
 //e restituisca il valore corrispondente, oppure undefined se il percorso non esiste.
 
+{
 console.log("Esercizio 6.18");
 
 function getValorePercorso(obj, percorso) {
@@ -434,10 +482,12 @@ const personaConIndirizzo = {
 console.log("Valore percorso 'indirizzo.citta':", getValorePercorso(personaConIndirizzo, "indirizzo.citta"));
 console.log("Valore percorso 'indirizzo.via':", getValorePercorso(personaConIndirizzo, "indirizzo.via"));
 console.log("Valore percorso 'indirizzo.cap':", getValorePercorso(personaConIndirizzo, "indirizzo.cap"));
+}
 
 //Dato un array di oggetti che rappresentano transazioni { data, tipo, importo, categoria },
 //scrivi una funzione che restituisca un oggetto riepilogo con: totale entrate, totale uscite, saldo, e importo per categoria.
 
+{
 console.log("Esercizio 6.19");
 
 const transazioni = [
@@ -474,12 +524,14 @@ function riepilogoTransazioni(transazioni) {
 }
 
 console.log("Riepilogo transazioni:", riepilogoTransazioni(transazioni));   
+}
 
 //Scrivi una funzione che "appiattisca" un oggetto annidato. Ad esempio:
 
 // Input: { a: 1, b: { c: 2, d: { e: 3 } } }
 // Output: { "a": 1, "b.c": 2, "b.d.e": 3 }
 
+{
 console.log("Esercizio 6.20");
 
 function appiattisci(obj, prefisso = '', risultato = {}) {
@@ -498,9 +550,11 @@ function appiattisci(obj, prefisso = '', risultato = {}) {
 
 const oggettoAnnidato = { a: 1, b: { c: 2, d: { e: 3 } } };
 console.log("Oggetto appiattito:", appiattisci(oggettoAnnidato));
+}
 
 //Scrivi una funzione che accetti due oggetti e restituisca un oggetto che descrive le differenze: proprietà aggiunte, rimosse e modificate.
 
+{
 console.log("Esercizio 6.21");
 
 function differenze(obj1, obj2) {
@@ -533,10 +587,12 @@ const oggetto1 = { a: 1, b: 2, c: 3 };
 const oggetto2 = { b: 2, c: 4, d: 5 };
 
 console.log("Differenze tra oggetto1 e oggetto2:", differenze(oggetto1, oggetto2));
+}
 
 //Crea un oggetto inventario che gestisca prodotti. Ogni prodotto ha nome, prezzo, quantita e categoria. Aggiungi i metodi:
 //aggiungiProdotto, rimuoviProdotto, aggiornaProdotto, cercaPerCategoria, prodottiSottoscorta(soglia) e valoreInventario.
 
+{
 console.log("Esercizio 6.22");
 
 const inventario = {
@@ -578,10 +634,12 @@ console.log("Valore totale dell'inventario dopo aggiornamento:", inventario.valo
 
 inventario.rimuoviProdotto("Prodotto B");
 console.log("Valore totale dell'inventario dopo rimozione:", inventario.valoreInventario());
+}
 
 //Scrivi una funzione che accetti un array di oggetti e una funzione di confronto,
 //e restituisca un oggetto con min e max secondo quel criterio.
 
+{
 console.log("Esercizio 6.23");
 
 function minMax(arr, confronto) {
@@ -608,10 +666,12 @@ const numeri = [5, 2, 9, 1, 5, 6];
 const risultato = minMax(numeri, (a, b) => a - b);
 console.log("Minimo:", risultato.min);
 console.log("Massimo:", risultato.max);
+}
 
 //Scrivi una funzione che trasformi un array di coppie chiave-valore in un oggetto e viceversa.
 //Ad esempio, [["a", 1], ["b", 2]] diventa { a: 1, b: 2 }.
 
+{
 console.log("Esercizio 6.24");
 
 function coppieInOggetto(coppie) {
@@ -638,3 +698,4 @@ console.log("Oggetto creato da coppie:", oggetto);
 
 const coppieDaOggetto = oggettoInCoppie(oggetto);
 console.log("Coppie create da oggetto:", coppieDaOggetto);
+}
