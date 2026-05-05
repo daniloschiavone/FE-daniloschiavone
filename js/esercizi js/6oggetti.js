@@ -498,3 +498,39 @@ function appiattisci(obj, prefisso = '', risultato = {}) {
 
 const oggettoAnnidato = { a: 1, b: { c: 2, d: { e: 3 } } };
 console.log("Oggetto appiattito:", appiattisci(oggettoAnnidato));
+
+//Scrivi una funzione che accetti due oggetti e restituisca un oggetto che descrive le differenze: proprietà aggiunte, rimosse e modificate.
+
+console.log("Esercizio 6.21");
+
+function differenze(obj1, obj2) {
+    const differenze = {
+        aggiunte: {},
+        rimosse: {},
+        modificate: {}
+    };
+
+    for (let chiave in obj1) {
+        if (obj1.hasOwnProperty(chiave)) {
+            if (!obj2.hasOwnProperty(chiave)) {
+                differenze.rimosse[chiave] = obj1[chiave];
+            } else if (obj1[chiave] !== obj2[chiave]) {
+                differenze.modificate[chiave] = { da: obj1[chiave], a: obj2[chiave] };
+            }
+        }
+    }
+
+    for (let chiave in obj2) {
+        if (obj2.hasOwnProperty(chiave) && !obj1.hasOwnProperty(chiave)) {
+            differenze.aggiunte[chiave] = obj2[chiave];
+        }
+    }
+
+    return differenze;
+}
+
+const oggetto1 = { a: 1, b: 2, c: 3 };
+const oggetto2 = { b: 2, c: 4, d: 5 };
+
+console.log("Differenze tra oggetto1 e oggetto2:", differenze(oggetto1, oggetto2));
+
