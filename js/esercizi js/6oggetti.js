@@ -370,3 +370,37 @@ function omit(obj, chiavi) {
 const personaOmmessa = omit(personaCompleta, ["cognome", "eta"]);
 console.log("Persona omessa:", personaOmmessa); 
 
+//Crea un oggetto rubrica con un array interno di contatti (ciascuno con nome, telefono, email).
+//Aggiungi i metodi: aggiungiContatto, rimuoviContatto, cercaPerNome, cercaPerTelefono e mostraTutti.
+
+console.log("Esercizio 6.17");
+
+const rubrica = {
+    contatti: [],
+    aggiungiContatto: function(nome, telefono, email) {
+        this.contatti.push({ nome, telefono, email });
+    },
+    rimuoviContatto: function(nome) {
+        this.contatti = this.contatti.filter(contatto => contatto.nome !== nome);
+    },
+    cercaPerNome: function(nome) {
+        return this.contatti.find(contatto => contatto.nome === nome);
+    },
+    cercaPerTelefono: function(telefono) {
+        return this.contatti.find(contatto => contatto.telefono === telefono);
+    },
+    mostraTutti: function() {
+        console.log("Contatti in rubrica:");
+        this.contatti.forEach(contatto => {
+            console.log(`Nome: ${contatto.nome}, Telefono: ${contatto.telefono}, Email: ${contatto.email}`);
+        });
+    }
+};
+
+rubrica.aggiungiContatto("Alice", "1234567890", "alice@example.com");
+rubrica.aggiungiContatto("Bob", "0987654321", "bob@example.com");
+rubrica.mostraTutti();
+console.log("Cerca per nome 'Alice':", rubrica.cercaPerNome("Alice"));
+console.log("Cerca per telefono '0987654321':", rubrica.cercaPerTelefono("0987654321"));
+rubrica.rimuoviContatto("Alice");
+rubrica.mostraTutti();  
