@@ -198,3 +198,32 @@ const oggettoC = { a: 1, b: 3 };
 console.log("Oggetti A e B sono uguali:", confrontaOggetti(oggettoA, oggettoB));
 console.log("Oggetti A e C sono uguali:", confrontaOggetti(oggettoA, oggettoC));
 
+//Crea un oggetto contoBancario con le proprietà titolare e saldo, e i metodi deposita, preleva e mostraSaldo.
+//Il metodo preleva non deve permettere di andare in negativo.
+
+console.log("Esercizio 6.11");
+
+const contoBancario = {
+    titolare: "Giovanni Rossi",
+    saldo: 1000,
+    deposita: function(importo) {
+        this.saldo += importo;
+    },
+    preleva: function(importo) {
+        if (importo > this.saldo) {
+            console.log("Fondi insufficienti. Operazione non consentita.");
+        } else {
+            this.saldo -= importo;
+        }
+    },
+    mostraSaldo: function() {
+        console.log(`Il saldo attuale di ${this.titolare} è: ${this.saldo} euro.`);
+    }
+};
+
+contoBancario.mostraSaldo();
+contoBancario.deposita(500);
+contoBancario.mostraSaldo();
+contoBancario.preleva(2000);
+contoBancario.preleva(300);
+contoBancario.mostraSaldo();
