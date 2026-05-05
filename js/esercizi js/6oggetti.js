@@ -608,3 +608,33 @@ const numeri = [5, 2, 9, 1, 5, 6];
 const risultato = minMax(numeri, (a, b) => a - b);
 console.log("Minimo:", risultato.min);
 console.log("Massimo:", risultato.max);
+
+//Scrivi una funzione che trasformi un array di coppie chiave-valore in un oggetto e viceversa.
+//Ad esempio, [["a", 1], ["b", 2]] diventa { a: 1, b: 2 }.
+
+console.log("Esercizio 6.24");
+
+function coppieInOggetto(coppie) {
+    const oggetto = {};
+    for (let [chiave, valore] of coppie) {
+        oggetto[chiave] = valore;
+    }
+    return oggetto;
+}
+
+function oggettoInCoppie(oggetto) {
+    const coppie = [];
+    for (let chiave in oggetto) {
+        if (oggetto.hasOwnProperty(chiave)) {
+            coppie.push([chiave, oggetto[chiave]]);
+        }
+    }
+    return coppie;
+}
+
+const coppie = [["a", 1], ["b", 2]];
+const oggetto = coppieInOggetto(coppie);
+console.log("Oggetto creato da coppie:", oggetto);
+
+const coppieDaOggetto = oggettoInCoppie(oggetto);
+console.log("Coppie create da oggetto:", coppieDaOggetto);
