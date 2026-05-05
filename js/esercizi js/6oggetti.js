@@ -72,3 +72,26 @@ const oggetto2 = { b: 3, c: 4 };
 
 const oggettoFuso = fusione(oggetto1, oggetto2);
 console.log("Oggetto fuso:", oggettoFuso);  
+
+//Dato un array di oggetti che rappresentano studenti (ciascuno con nome e voto),
+//scrivi una funzione che restituisca il nome dello studente con il voto più alto.
+
+console.log("Esercizio 6.6");
+
+const studenti = [
+    { nome: "Alice", voto: 85 },
+    { nome: "Bob", voto: 92 },
+    { nome: "Charlie", voto: 78 }
+];
+
+function studenteMigliore(studenti) {
+    let migliore = studenti[0];
+    for (let studente of studenti) {
+        if (studente.voto > migliore.voto) {
+            migliore = studente;
+        }
+    }
+    return migliore.nome;
+}
+
+console.log("Lo studente con il voto più alto è:", studenteMigliore(studenti));
