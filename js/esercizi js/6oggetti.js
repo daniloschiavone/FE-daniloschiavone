@@ -329,3 +329,27 @@ oggettoClonato.dettagli.hobby.push("lettura");
 console.log("Oggetto originale dopo modifica al clone:", oggettoOriginale);
 console.log("Oggetto clonato dopo modifica:", oggettoClonato); 
 
+//Scrivi una funzione pick che accetti un oggetto e un array di chiavi, e restituisca un nuovo oggetto con solo quelle proprietà.
+
+console.log("Esercizio 6.15");
+
+function pick(obj, chiavi) {
+    const risultato = {};
+    for (let chiave of chiavi) {
+        if (obj.hasOwnProperty(chiave)) {
+            risultato[chiave] = obj[chiave];
+        }
+    }
+    return risultato;
+}
+
+const personaCompleta = {
+    nome: "Giulia",
+    cognome: "Bianchi",
+    eta: 28,
+    professione: "Ingegnere"
+};
+
+const personaSelezionata = pick(personaCompleta, ["nome", "professione"]);
+console.log("Persona selezionata:", personaSelezionata);    
+
