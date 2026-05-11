@@ -382,3 +382,17 @@ const dateOrdinate = dateFiltrate.sort((a, b) => new Date(b) - new Date(a));
 
 console.log(dateOrdinate);
 
+//Dato un array di oggetti { prodotto, prezzo, sconto }, scrivi una pipeline che:
+
+// 1. Calcoli il prezzo scontato
+// 2. Filtri i prodotti con prezzo scontato > 10
+// 3. Ordini per prezzo scontato crescente
+// 4. Restituisca un array di stringhe "prodotto: €prezzo"
+
+console.log("Esercizio 7.26:");
+
+const prodotti2 = [
+    { prodotto: "Prodotto A", prezzo: 20, sconto: 0.1 },
+    { prodotto: "Prodotto B", prezzo: 15, sconto: 0.2 },
+    { prodotto: "Prodotto C", prezzo: 30, sconto: 0.05 }
+];  
