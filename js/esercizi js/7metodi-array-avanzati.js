@@ -405,3 +405,15 @@ const risultato2 = prodotti2
 
 console.log(risultato2);
 
+//Dato un array di numeri,
+//usa reduce per calcolare la varianza. La varianza è la media dei quadrati delle differenze dalla media.
+
+console.log("Esercizio 7.27:");
+
+const numeri8 = [1, 2, 3, 4, 5];
+const media = numeri8.reduce((acc, n) => acc + n, 0) / numeri8.length;
+const varianza = numeri8.reduce((acc, n) => acc + (n - media) ** 2, 0) / numeri8.length;
+
+console.log(varianza);
+
+
