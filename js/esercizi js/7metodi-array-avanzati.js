@@ -293,3 +293,25 @@ const anziani = persone
 
 console.log(anziani);
 
+//Dato un array di stringhe, usa i metodi degli array per trovare la parola che appare più frequentemente.
+
+console.log("Esercizio 7.22:");
+
+const parole2 = ["apple", "banana", "apple", "orange", "banana", "apple"];
+const frequenzaParole = parole2.reduce((acc, parola) => {
+    acc[parola] = (acc[parola] || 0) + 1;
+    return acc;
+}, {});
+
+let parolaPiuFrequente = null;
+let maxFrequenza = 0;
+
+for (const parola in frequenzaParole) {
+    if (frequenzaParole[parola] > maxFrequenza) {
+        maxFrequenza = frequenzaParole[parola];
+        parolaPiuFrequente = parola;
+    }
+}
+
+console.log(parolaPiuFrequente);
+
