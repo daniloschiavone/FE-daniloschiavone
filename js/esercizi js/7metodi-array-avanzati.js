@@ -178,9 +178,34 @@ function myReduce(array, callback, initialValue) {
     return accumulator;
 }
 
-// Esempio di utilizzo:
+//--- Esempio di utilizzo: ---
 const arr = [1, 2, 3];
 console.log(myMap(arr, x => x * 2)); // [2, 4, 6]
 console.log(myFilter(arr, x => x % 2 === 1)); // [1, 3]
 console.log(myReduce(arr, (acc, x) => acc + x, 0)); // 6
 
+//Dato un array di oggetti che rappresentano ordini { cliente, prodotto, quantita, prezzoUnitario }, scrivi una pipeline che:
+
+// 1. Calcoli il totale di ogni ordine
+// 2. Raggruppi gli ordini per cliente
+// 3. Calcoli il totale speso da ogni cliente
+
+console.log("Esercizio 7.15:");
+
+const ordini = [
+    { cliente: "Alice", prodotto: "Prodotto A", quantita: 2, prezzoUnitario: 10 },
+    { cliente: "Bob", prodotto: "Prodotto B", quantita: 1, prezzoUnitario: 20 },
+    { cliente: "Alice", prodotto: "Prodotto C", quantita: 3, prezzoUnitario: 5 }
+];
+
+const totalePerCliente = ordini
+    .map(ordine => ({ ...ordine, totale: ordine.quantita * ordine.prezzoUnitario })) // Calcola il totale di ogni ordine
+    .reduce((acc, ordine) => {
+        if (!acc[ordine.cliente]) {
+            acc[ordine.cliente] = 0;
+        }
+        acc[ordine.cliente] += ordine.totale;
+        return acc;
+    }, {}); // Raggruppa gli ordini per cliente e calcola il totale speso da ogni cliente
+
+console.log(totalePerCliente);
