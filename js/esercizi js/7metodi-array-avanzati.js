@@ -250,3 +250,12 @@ const studentiConMedia = studenti2.map(studente => {
 
 console.log(studentiConMedia);  
 
+//Dato un array di frasi (stringhe), usa flatMap per ottenere un array di tutte le singole parole, tutte in minuscolo.
+
+console.log("Esercizio 7.19:");
+
+const frasi = ["Ciao Mondo", "JavaScript è fantastico", "Esercizi con flatMap"];
+const parole = frasi.flatMap(frase => frase.toLowerCase().split(" "));
+
+console.log(parole);
+
