@@ -275,3 +275,21 @@ const numeriSeparati = numeri7.reduce((acc, n) => {
 
 console.log(numeriSeparati);
 
+//Dato un array di oggetti { nome, eta }, usa sort e slice per ottenere i 3 più anziani.
+
+console.log("Esercizio 7.21:");
+
+const persone = [
+    { nome: "Alice", eta: 30 },
+    { nome: "Bob", eta: 25 },
+    { nome: "Charlie", eta: 35 },
+    { nome: "Diana", eta: 28 },
+    { nome: "Eve", eta: 32 }
+];
+
+const anziani = persone
+    .sort((a, b) => b.eta - a.eta)
+    .slice(0, 3);
+
+console.log(anziani);
+
