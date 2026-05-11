@@ -67,3 +67,12 @@ const studenti = [
 const mediaVoti = studenti.reduce((acc, studente) => acc + studente.voto, 0) / studenti.length;
 console.log(mediaVoti); 
 
+//Dato un array di numeri che può contenere duplicati,
+//usa filter per creare un array senza duplicati (senza usare Set).
+
+console.log("Esercizio 7.8:");
+
+const numeri4 = [1, 2, 3, 2, 4, 1, 5];
+const numeriUnici = numeri4.filter((n, index) => numeri4.indexOf(n) === index);
+console.log(numeriUnici);
+
