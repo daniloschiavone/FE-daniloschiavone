@@ -100,3 +100,13 @@ const conteggioOccorrenze = stringhe3.reduce((acc, str) => {
 }, {});
 console.log(conteggioOccorrenze);
 
+//Dato un array di array di numeri (es. [[1, 2], [3, 4], [5, 6]]),
+//usa reduce per appiattirlo in un unico array e poi calcola la somma totale con un'altra chiamata a reduce.
+
+console.log("Esercizio 7.11:");
+
+const arrayDiArray = [[1, 2], [3, 4], [5, 6]];
+const arrayAppiattito = arrayDiArray.reduce((acc, arr) => acc.concat(arr), []);
+const sommaTotale = arrayAppiattito.reduce((acc, n) => acc + n, 0);
+console.log(sommaTotale);
+
