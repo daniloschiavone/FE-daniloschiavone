@@ -45,3 +45,12 @@ console.log("Esercizio 7.5:");
 const numeri3 = [2, 3, 4];
 const prodottoTotale = numeri3.reduce((acc, n) => acc * n, 1);
 console.log(prodottoTotale);
+
+//Dato un array di stringhe, usa reduce per trovare la stringa più lunga.
+
+console.log("Esercizio 7.6:");
+
+const stringhe2 = ["ciao", "mondo", "javascript", "esercizio"];
+const stringaPiuLunga = stringhe2.reduce((acc, str) => str.length > acc.length ? str : acc, "");
+console.log(stringaPiuLunga);
+
