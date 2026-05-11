@@ -171,8 +171,22 @@ function myFilter(array, callback) {
 }
 
 function myReduce(array, callback, initialValue) {
-    let accumulator = initialValue;
-    for (let i = 0; i < array.length; i++) {
+    if (array.length === 0 && arguments.length < 3) {
+        throw new TypeError("Reduce of empty array with no initial value");
+    }
+
+    let accumulator;
+    let startIndex;
+
+    if (arguments.length >= 3) {
+        accumulator = initialValue;
+        startIndex = 0;
+    } else {
+        accumulator = array[0];
+        startIndex = 1;
+    }
+
+    for (let i = startIndex; i < array.length; i++) {
         accumulator = callback(accumulator, array[i], i, array);
     }
     return accumulator;
@@ -198,15 +212,23 @@ const ordini = [
     { cliente: "Alice", prodotto: "Prodotto C", quantita: 3, prezzoUnitario: 5 }
 ];
 
-const totalePerCliente = ordini
-    .map(ordine => ({ ...ordine, totale: ordine.quantita * ordine.prezzoUnitario })) // Calcola il totale di ogni ordine
-    .reduce((acc, ordine) => {
-        if (!acc[ordine.cliente]) {
-            acc[ordine.cliente] = 0;
-        }
-        acc[ordine.cliente] += ordine.totale;
-        return acc;
-    }, {}); // Raggruppa gli ordini per cliente e calcola il totale speso da ogni cliente
+const ordiniConTotale = ordini
+    .map(ordine => ({ ...ordine, totale: ordine.quantita * ordine.prezzoUnitario })); // Calcola il totale di ogni ordine
+
+const ordiniPerCliente = ordiniConTotale.reduce((acc, ordine) => {
+    if (!acc[ordine.cliente]) {
+        acc[ordine.cliente] = [];
+    }
+    acc[ordine.cliente].push(ordine);
+    return acc;
+}, {}); // Raggruppa gli ordini per cliente
+
+const totalePerCliente = Object.fromEntries(
+    Object.entries(ordiniPerCliente).map(([cliente, ordiniCliente]) => {
+        const totale = ordiniCliente.reduce((acc, ordine) => acc + ordine.totale, 0);
+        return [cliente, totale];
+    })
+); // Calcola il totale speso da ogni cliente
 
 console.log(totalePerCliente);
 
@@ -279,7 +301,7 @@ console.log(numeriSeparati);
 
 console.log("Esercizio 7.21:");
 
-const persone = [
+const personeAnziane = [
     { nome: "Alice", eta: 30 },
     { nome: "Bob", eta: 25 },
     { nome: "Charlie", eta: 35 },
@@ -287,7 +309,7 @@ const persone = [
     { nome: "Eve", eta: 32 }
 ];
 
-const anziani = persone
+const anziani = personeAnziane
     .sort((a, b) => b.eta - a.eta)
     .slice(0, 3);
 
@@ -469,13 +491,16 @@ const logAccesso = [
     { utente: "Charlie", data: "2024-01-02", azione: "logout" }
 ];
 
-const azioniPerUtente = logAccesso.reduce((acc, { utente }) => {
-    acc[utente] = (acc[utente] || 0) + 1;
+const logPerUtente = logAccesso.reduce((acc, voce) => {
+    if (!acc[voce.utente]) {
+        acc[voce.utente] = [];
+    }
+    acc[voce.utente].push(voce);
     return acc;
 }, {});
 
-const utentiOrdinati = Object.entries(azioniPerUtente)
-    .sort((a, b) => b[1] - a[1])
-    .map(([utente, totaleAzioni]) => ({ utente, totaleAzioni }));
+const utentiOrdinati = Object.entries(logPerUtente)
+    .map(([utente, azioni]) => ({ utente, totaleAzioni: azioni.length }))
+    .sort((a, b) => b.totaleAzioni - a.totaleAzioni);
 
 console.log(utentiOrdinati);
