@@ -22,3 +22,18 @@ const numeri2 = [5, 12, 25, 8, 30, 60];
 const numeriFiltrati = numeri2.filter(n => n > 10 && n < 50);
 console.log(numeriFiltrati);
 
+//Dato un array di oggetti { nome, prezzo } che rappresentano prodotti, usa filter per trovare i prodotti con prezzo inferiore a 20 euro,
+//poi usa map per ottenere un array con solo i nomi di quei prodotti.
+
+console.log("Esercizio 7.4:");
+
+const prodotti = [
+    { nome: "Prodotto A", prezzo: 15 },
+    { nome: "Prodotto B", prezzo: 25 },
+    { nome: "Prodotto C", prezzo: 10 },
+    { nome: "Prodotto D", prezzo: 30 }
+];
+
+const prodottiEconomici = prodotti.filter(prodotto => prodotto.prezzo < 20);
+const nomiProdottiEconomici = prodottiEconomici.map(prodotto => prodotto.nome);
+console.log(nomiProdottiEconomici);
