@@ -451,3 +451,31 @@ function zip(array1, array2) {
 const zipped = zip([1, 2, 3], ["a", "b", "c"]);
 console.log(zipped); // [[1, "a"], [2, "b"], [3, "c"]]
 
+//Dato un array di oggetti che rappresentano log di accesso { utente, data, azione }, scrivi una pipeline che:
+
+// 1. Raggruppi per utente
+// 2. Per ogni utente conti il numero totale di azioni
+// 3. Ordini gli utenti per numero di azioni (dal più attivo al meno attivo)
+// 4. Restituisca un array di oggetti { utente, totaleAzioni }
+
+console.log("Esercizio 7.30:");
+
+const logAccesso = [
+    { utente: "Alice", data: "2024-01-01", azione: "login" },
+    { utente: "Bob", data: "2024-01-01", azione: "login" },
+    { utente: "Alice", data: "2024-01-02", azione: "logout" },
+    { utente: "Charlie", data: "2024-01-01", azione: "login" },
+    { utente: "Bob", data: "2024-01-02", azione: "logout" },
+    { utente: "Charlie", data: "2024-01-02", azione: "logout" }
+];
+
+const azioniPerUtente = logAccesso.reduce((acc, { utente }) => {
+    acc[utente] = (acc[utente] || 0) + 1;
+    return acc;
+}, {});
+
+const utentiOrdinati = Object.entries(azioniPerUtente)
+    .sort((a, b) => b[1] - a[1])
+    .map(([utente, totaleAzioni]) => ({ utente, totaleAzioni }));
+
+console.log(utentiOrdinati);
