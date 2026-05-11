@@ -209,3 +209,17 @@ const totalePerCliente = ordini
     }, {}); // Raggruppa gli ordini per cliente e calcola il totale speso da ogni cliente
 
 console.log(totalePerCliente);
+
+//Dato un array di numeri, usa map per generare un array di oggetti { valore, quadrato, cubo } per ciascun numero.
+
+console.log("Esercizio 7.16:");
+
+const numeri6 = [1, 2, 3];
+const arrayDiOggetti = numeri6.map(n => ({
+    valore: n,
+    quadrato: n ** 2,
+    cubo: n ** 3
+}));
+
+console.log(arrayDiOggetti);
+
