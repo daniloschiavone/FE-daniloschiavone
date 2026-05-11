@@ -37,3 +37,11 @@ const prodotti = [
 const prodottiEconomici = prodotti.filter(prodotto => prodotto.prezzo < 20);
 const nomiProdottiEconomici = prodottiEconomici.map(prodotto => prodotto.nome);
 console.log(nomiProdottiEconomici);
+
+//Dato un array di numeri, usa reduce per calcolare il prodotto di tutti gli elementi.
+
+console.log("Esercizio 7.5:");
+
+const numeri3 = [2, 3, 4];
+const prodottoTotale = numeri3.reduce((acc, n) => acc * n, 1);
+console.log(prodottoTotale);
