@@ -14,3 +14,11 @@ const stringhe = ["ciao", "mondo", "javascript"];
 const stringheCapitalizzate = stringhe.map(str => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase());
 console.log(stringheCapitalizzate);
 
+//Dato un array di numeri, usa filter per ottenere solo i numeri maggiori di 10 e minori di 50.
+
+console.log("Esercizio 7.3:");
+
+const numeri2 = [5, 12, 25, 8, 30, 60];
+const numeriFiltrati = numeri2.filter(n => n > 10 && n < 50);
+console.log(numeriFiltrati);
+
