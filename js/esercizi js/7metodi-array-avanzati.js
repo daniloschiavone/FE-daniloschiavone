@@ -147,3 +147,40 @@ const risultato = numeri5
 
 console.log(risultato);
 
+//Implementa la tua versione di map, filter e reduce come funzioni standalone (senza usare i metodi nativi).
+//Ciascuna deve accettare un array e una callback.
+
+console.log("Esercizio 7.14:");
+
+function myMap(array, callback) {
+    const result = [];
+    for (let i = 0; i < array.length; i++) {
+        result.push(callback(array[i], i, array));
+    }
+    return result;
+}
+
+function myFilter(array, callback) {
+    const result = [];
+    for (let i = 0; i < array.length; i++) {
+        if (callback(array[i], i, array)) {
+            result.push(array[i]);
+        }
+    }
+    return result;
+}
+
+function myReduce(array, callback, initialValue) {
+    let accumulator = initialValue;
+    for (let i = 0; i < array.length; i++) {
+        accumulator = callback(accumulator, array[i], i, array);
+    }
+    return accumulator;
+}
+
+// Esempio di utilizzo:
+const arr = [1, 2, 3];
+console.log(myMap(arr, x => x * 2)); // [2, 4, 6]
+console.log(myFilter(arr, x => x % 2 === 1)); // [1, 3]
+console.log(myReduce(arr, (acc, x) => acc + x, 0)); // 6
+
