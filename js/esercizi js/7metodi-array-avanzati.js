@@ -315,3 +315,30 @@ for (const parola in frequenzaParole) {
 
 console.log(parolaPiuFrequente);
 
+//Dato un array di oggetti { studente, materia, voto },
+//usa reduce per creare un oggetto dove ogni studente ha un array dei suoi voti raggruppati per materia.
+
+console.log("Esercizio 7.23:");
+
+const voti = [
+    { studente: "Alice", materia: "Matematica", voto: 85 },
+    { studente: "Alice", materia: "Inglese", voto: 90 },
+    { studente: "Bob", materia: "Matematica", voto: 80 },
+    { studente: "Bob", materia: "Inglese", voto: 85 },
+    { studente: "Charlie", materia: "Matematica", voto: 90 },
+    { studente: "Charlie", materia: "Inglese", voto: 92 }
+];
+
+const votiPerStudente = voti.reduce((acc, { studente, materia, voto }) => {
+    if (!acc[studente]) {
+        acc[studente] = {};
+    }
+    if (!acc[studente][materia]) {
+        acc[studente][materia] = [];
+    }
+    acc[studente][materia].push(voto);
+    return acc;
+}, {});
+
+console.log(votiPerStudente);
+
