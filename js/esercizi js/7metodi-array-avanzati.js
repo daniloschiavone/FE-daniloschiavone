@@ -416,4 +416,20 @@ const varianza = numeri8.reduce((acc, n) => acc + (n - media) ** 2, 0) / numeri8
 
 console.log(varianza);
 
+//Dato un array di parole, usa i metodi degli array per creare un indice:
+//un oggetto dove ogni lettera dell'alfabeto è una chiave e il valore è un array di parole che iniziano con quella lettera.
+
+console.log("Esercizio 7.28:");
+
+const parole3 = ["apple", "banana", "avocado", "grape", "orange", "melon"];
+const indice = parole3.reduce((acc, parola) => {
+    const letteraIniziale = parola.charAt(0).toLowerCase();
+    if (!acc[letteraIniziale]) {
+        acc[letteraIniziale] = [];
+    }
+    acc[letteraIniziale].push(parola);
+    return acc;
+}, {});
+
+console.log(indice);
 
