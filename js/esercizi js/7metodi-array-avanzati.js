@@ -433,3 +433,21 @@ const indice = parole3.reduce((acc, parola) => {
 
 console.log(indice);
 
+//Scrivi una funzione zip che accetti due array e restituisca un array di coppie. Ad esempio, zip([1, 2, 3], ["a", "b", "c"]) 
+//restituisce [[1, "a"], [2, "b"], [3, "c"]]. Se gli array hanno lunghezza diversa, fermati al più corto.
+
+console.log("Esercizio 7.29:");
+
+function zip(array1, array2) {
+    const lunghezza = Math.min(array1.length, array2.length);
+    const risultato = [];
+    for (let i = 0; i < lunghezza; i++) {
+        risultato.push([array1[i], array2[i]]);
+    }
+    return risultato;
+}
+
+//--- Esempio di utilizzo: ---
+const zipped = zip([1, 2, 3], ["a", "b", "c"]);
+console.log(zipped); // [[1, "a"], [2, "b"], [3, "c"]]
+
