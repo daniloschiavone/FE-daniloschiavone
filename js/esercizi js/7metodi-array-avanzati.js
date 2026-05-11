@@ -54,3 +54,16 @@ const stringhe2 = ["ciao", "mondo", "javascript", "esercizio"];
 const stringaPiuLunga = stringhe2.reduce((acc, str) => str.length > acc.length ? str : acc, "");
 console.log(stringaPiuLunga);
 
+//Dato un array di oggetti { studente, voto }, usa i metodi degli array per calcolare la media dei voti.
+
+console.log("Esercizio 7.7:");
+
+const studenti = [
+    { studente: "Alice", voto: 85 },
+    { studente: "Bob", voto: 90 },
+    { studente: "Charlie", voto: 78 }
+];
+
+const mediaVoti = studenti.reduce((acc, studente) => acc + studente.voto, 0) / studenti.length;
+console.log(mediaVoti); 
+
