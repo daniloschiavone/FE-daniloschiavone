@@ -88,3 +88,15 @@ const persone = [
 
 const personaPiuGiovane = persone.reduce((acc, persona) => persona.eta < acc.eta ? persona : acc, persone[0]);
 console.log(personaPiuGiovane);
+
+//Dato un array di stringhe, usa reduce per creare un oggetto che conti le occorrenze di ogni stringa.
+
+console.log("Esercizio 7.10:");
+
+const stringhe3 = ["apple", "banana", "apple", "orange", "banana", "apple"];
+const conteggioOccorrenze = stringhe3.reduce((acc, str) => {
+    acc[str] = (acc[str] || 0) + 1;
+    return acc;
+}, {});
+console.log(conteggioOccorrenze);
+
