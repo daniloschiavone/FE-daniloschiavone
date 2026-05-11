@@ -259,3 +259,19 @@ const parole = frasi.flatMap(frase => frase.toLowerCase().split(" "));
 
 console.log(parole);
 
+//Dato un array di numeri, usa reduce per creare un oggetto che separi i numeri in { pari: [...], dispari: [...] }.
+
+console.log("Esercizio 7.20:");
+
+const numeri7 = [1, 2, 3, 4, 5, 6];
+const numeriSeparati = numeri7.reduce((acc, n) => {
+    if (n % 2 === 0) {
+        acc.pari.push(n);
+    } else {
+        acc.dispari.push(n);
+    }
+    return acc;
+}, { pari: [], dispari: [] });
+
+console.log(numeriSeparati);
+
