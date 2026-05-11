@@ -110,3 +110,23 @@ const arrayAppiattito = arrayDiArray.reduce((acc, arr) => acc.concat(arr), []);
 const sommaTotale = arrayAppiattito.reduce((acc, n) => acc + n, 0);
 console.log(sommaTotale);
 
+//Dato un array di transazioni (oggetti con tipo che può essere "entrata" o "uscita" e importo),
+//calcola il saldo finale usando reduce.
+
+console.log("Esercizio 7.12:");
+
+const transazioni = [
+    { tipo: "entrata", importo: 100 },
+    { tipo: "uscita", importo: 30 },
+    { tipo: "entrata", importo: 50 },
+    { tipo: "uscita", importo: 20 }
+];
+
+const saldoFinale = transazioni.reduce((acc, transazione) => {
+    if (transazione.tipo === "entrata") {
+        return acc + transazione.importo;
+    } else {
+        return acc - transazione.importo;
+    }
+}, 0);
+console.log(saldoFinale);
