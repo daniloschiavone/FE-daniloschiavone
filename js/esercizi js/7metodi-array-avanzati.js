@@ -130,3 +130,20 @@ const saldoFinale = transazioni.reduce((acc, transazione) => {
     }
 }, 0);
 console.log(saldoFinale);
+
+//Dato un array di numeri, scrivi una singola catena di metodi che:
+//1. Elimini i numeri negativi
+//2. Rimuova i duplicati
+//3. Ordini in ordine crescente
+//4. Moltiplichi ogni numero per 10
+
+console.log("Esercizio 7.13:");
+const numeri5 = [3, -1, 2, 3, -5, 4, 2];
+const risultato = numeri5
+    .filter(n => n >= 0) // Elimina i numeri negativi
+    .filter((n, index, arr) => arr.indexOf(n) === index) // Rimuove i duplicati
+    .sort((a, b) => a - b) // Ordina in ordine crescente
+    .map(n => n * 10); // Moltiplica ogni numero per 10
+
+console.log(risultato);
+
