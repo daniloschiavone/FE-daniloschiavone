@@ -369,3 +369,16 @@ const persone2 = [
 const personeRaggruppate = groupBy(persone2, persona => persona.eta);
 console.log(personeRaggruppate);
 
+//Dato un array di date (come stringhe "YYYY-MM-DD"),
+//usa filter per ottenere solo le date di un mese specifico, poi ordinale dalla più recente alla più vecchia.
+
+console.log("Esercizio 7.25:");
+
+const date = ["2024-01-15", "2024-02-20", "2024-01-10", "2024-03-05"];
+const meseSpecifico = "01";
+
+const dateFiltrate = date.filter(d => d.split("-")[1] === meseSpecifico);
+const dateOrdinate = dateFiltrate.sort((a, b) => new Date(b) - new Date(a));
+
+console.log(dateOrdinate);
+
