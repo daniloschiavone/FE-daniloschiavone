@@ -76,3 +76,15 @@ const numeri4 = [1, 2, 3, 2, 4, 1, 5];
 const numeriUnici = numeri4.filter((n, index) => numeri4.indexOf(n) === index);
 console.log(numeriUnici);
 
+//Dato un array di oggetti { nome, eta }, usa i metodi degli array per trovare la persona più giovane.
+
+console.log("Esercizio 7.9:");
+
+const persone = [
+    { nome: "Alice", eta: 30 },
+    { nome: "Bob", eta: 25 },
+    { nome: "Charlie", eta: 35 }
+];
+
+const personaPiuGiovane = persone.reduce((acc, persona) => persona.eta < acc.eta ? persona : acc, persone[0]);
+console.log(personaPiuGiovane);
