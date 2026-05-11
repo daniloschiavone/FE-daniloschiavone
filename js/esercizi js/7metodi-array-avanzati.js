@@ -342,3 +342,30 @@ const votiPerStudente = voti.reduce((acc, { studente, materia, voto }) => {
 
 console.log(votiPerStudente);
 
+//Scrivi una funzione che accetti un array e una funzione di raggruppamento,
+//e restituisca un oggetto con gli elementi raggruppati (implementa una versione generica di groupBy).
+
+console.log("Esercizio 7.24:");
+
+function groupBy(array, keyFn) {
+    return array.reduce((acc, item) => {
+        const key = keyFn(item);
+        if (!acc[key]) {
+            acc[key] = [];
+        }
+        acc[key].push(item);
+        return acc;
+    }, {});
+}
+
+//--- Esempio di utilizzo: ---
+const persone2 = [
+    { nome: "Alice", eta: 30 },
+    { nome: "Bob", eta: 25 },
+    { nome: "Charlie", eta: 30 },
+    { nome: "Diana", eta: 25 }
+];
+
+const personeRaggruppate = groupBy(persone2, persona => persona.eta);
+console.log(personeRaggruppate);
+
