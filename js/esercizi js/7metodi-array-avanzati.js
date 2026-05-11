@@ -223,3 +223,11 @@ const arrayDiOggetti = numeri6.map(n => ({
 
 console.log(arrayDiOggetti);
 
+//Dato un array di stringhe che rappresentano indirizzi email, usa filter per ottenere solo quelli che terminano con ".it".
+
+console.log("Esercizio 7.17:");
+
+const email = ["alice@example.com", "bob@example.it", "charlie@example.com", "diana@example.it"];
+const emailIt = email.filter(e => e.endsWith(".it"));
+
+console.log(emailIt);
