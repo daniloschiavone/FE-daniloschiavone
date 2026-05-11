@@ -396,3 +396,12 @@ const prodotti2 = [
     { prodotto: "Prodotto B", prezzo: 15, sconto: 0.2 },
     { prodotto: "Prodotto C", prezzo: 30, sconto: 0.05 }
 ];  
+
+const risultato2 = prodotti2
+    .map(p => ({ ...p, prezzoScontato: p.prezzo * (1 - p.sconto) })) // Calcola il prezzo scontato
+    .filter(p => p.prezzoScontato > 10) // Filtra i prodotti con prezzo scontato > 10
+    .sort((a, b) => a.prezzoScontato - b.prezzoScontato) // Ordina per prezzo scontato crescente
+    .map(p => `${p.prodotto}: €${p.prezzoScontato.toFixed(2)}`); // Restituisce un array di stringhe "prodotto: €prezzo"
+
+console.log(risultato2);
+
