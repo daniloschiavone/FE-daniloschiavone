@@ -231,3 +231,22 @@ const email = ["alice@example.com", "bob@example.it", "charlie@example.com", "di
 const emailIt = email.filter(e => e.endsWith(".it"));
 
 console.log(emailIt);
+
+//Dato un array di oggetti { nome, voti } (dove voti è un array di numeri),
+//usa map per creare un nuovo array dove ogni oggetto ha una proprietà aggiuntiva media.ù
+
+console.log("Esercizio 7.18:");
+
+const studenti2 = [
+    { nome: "Alice", voti: [85, 90, 78] },
+    { nome: "Bob", voti: [80, 85, 88] },
+    { nome: "Charlie", voti: [90, 92, 95] }
+];
+
+const studentiConMedia = studenti2.map(studente => {
+    const media = studente.voti.reduce((acc, voto) => acc + voto, 0) / studente.voti.length;
+    return { ...studente, media };
+});
+
+console.log(studentiConMedia);  
+
